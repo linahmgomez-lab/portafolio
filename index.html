@@ -36,11 +36,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .work-item{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#555;line-height:1.5}
 .offer-card{background:#1B4332;border-radius:14px;padding:1.25rem 1.5rem}
 .offer-title{font-size:13px;font-weight:500;color:#D4AF37;margin-bottom:1rem}
-.offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem}
-.offer-pkg{background:rgba(255,255,255,0.05);border:0.5px solid rgba(212,175,55,0.2);border-radius:10px;padding:.75rem .5rem;text-align:center}
-.offer-price{font-size:15px;font-weight:500;color:#D4AF37;margin-bottom:3px}
-.offer-name{font-size:10px;color:rgba(255,255,255,0.5);line-height:1.4}
-.offer-detail{font-size:9px;color:rgba(255,255,255,0.25);margin-top:3px}
+.svc-list{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem}
+.svc{background:rgba(255,255,255,0.05);border:0.5px solid rgba(212,175,55,0.2);border-radius:10px;padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.svc-name{font-size:12px;font-weight:500;color:#ffffff;margin-bottom:2px}
+.svc-desc{font-size:10px;color:rgba(255,255,255,0.4);line-height:1.4}
+.svc-price{font-size:14px;font-weight:500;color:#D4AF37;display:block}
+.svc-time{font-size:9px;color:rgba(255,255,255,0.3)}
+.svc-right{text-align:right;flex-shrink:0}
 .offer-divider{height:0.5px;background:rgba(212,175,55,0.15);margin:.75rem 0}
 .pay-row{display:flex;gap:8px;flex-wrap:wrap}
 .pay-pill{font-size:11px;padding:4px 10px;border-radius:20px;border:0.5px solid rgba(212,175,55,0.25);color:rgba(212,175,55,0.7)}
@@ -133,10 +135,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="section-label">Servicios y precios</div>
 <div class="offer-card">
 <div class="offer-title">¿Qué puedo hacer por tu negocio?</div>
-<div class="offer-grid">
-<div class="offer-pkg"><div class="offer-price">$150k</div><div class="offer-name">Google Maps</div><div class="offer-detail">Pago único · 24h</div></div>
-<div class="offer-pkg"><div class="offer-price">$300k</div><div class="offer-name">Presencia digital</div><div class="offer-detail">50/50 · 48h</div></div>
-<div class="offer-pkg"><div class="offer-price">$500k</div><div class="offer-name">Automatización</div><div class="offer-detail">50/50 · 72h</div></div>
+<div class="svc-list">
+<div class="svc"><div><div class="svc-name">🗺️ Google Maps optimizado</div><div class="svc-desc">Perfil completo + reseñas + fotos + palabras clave</div></div><div class="svc-right"><span class="svc-price">$150k</span><span class="svc-time">Pago único · 24h</span></div></div>
+<div class="svc"><div><div class="svc-name">🛍️ Catálogo digital</div><div class="svc-desc">Hasta 10 productos con fotos y precios en Canva</div></div><div class="svc-right"><span class="svc-price">$150k</span><span class="svc-time">Pago único · 24h</span></div></div>
+<div class="svc"><div><div class="svc-name">📸 Feed de Instagram</div><div class="svc-desc">9–12 publicaciones diseñadas listas para publicar</div></div><div class="svc-right"><span class="svc-price">$200k</span><span class="svc-time">Pago único · 48h</span></div></div>
+<div class="svc"><div><div class="svc-name">📊 Presencia digital completa</div><div class="svc-desc">Google Maps + fotos + catálogo + 1 red social</div></div><div class="svc-right"><span class="svc-price">$300k</span><span class="svc-time">Pago único · 48h</span></div></div>
+<div class="svc"><div><div class="svc-name">📱 Manejo de redes sociales</div><div class="svc-desc">8 posts al mes diseñados y programados</div></div><div class="svc-right"><span class="svc-price">$300k</span><span class="svc-time">Mensual</span></div></div>
+<div class="svc"><div><div class="svc-name">🌐 Página web básica</div><div class="svc-desc">Hasta 5 secciones con productos y pagos integrados</div></div><div class="svc-right"><span class="svc-price">$400k</span><span class="svc-time">Pago único · 72h</span></div></div>
+<div class="svc"><div><div class="svc-name">🤖 Automatización WhatsApp</div><div class="svc-desc">Respuestas automáticas + agendamiento + menú</div></div><div class="svc-right"><span class="svc-price">$500k</span><span class="svc-time">Setup · +$200k/mes</span></div></div>
 </div>
 <div class="offer-divider"></div>
 <div class="pay-row">
@@ -152,7 +158,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="terms-sub">Para que todo sea claro desde el inicio</div>
 </div>
 <div class="term-row"><div class="term-num">1</div><div><div class="term-text">Confirmación por escrito antes de empezar</div><div class="term-sub-text">Acuerdo del servicio, valor y forma de pago vía WhatsApp.</div></div></div>
-<div class="term-row"><div class="term-num">2</div><div><div class="term-text">Pago antes de iniciar el trabajo</div><div class="term-sub-text">Google Maps: pago completo. Paquetes $300k y $500k: 50% al inicio, 50% al entregar.</div></div></div>
+<div class="term-row"><div class="term-num">2</div><div><div class="term-text">Pago antes de iniciar el trabajo</div><div class="term-sub-text">Servicios hasta $200k: pago completo al inicio. Desde $300k: 50% al inicio, 50% al entregar.</div></div></div>
 <div class="term-row"><div class="term-num">3</div><div><div class="term-text">Accesos y entregables al recibir el saldo</div><div class="term-sub-text">Claves y archivos finales se entregan cuando el pago está completo.</div></div></div>
 <div class="term-row"><div class="term-num">4</div><div><div class="term-text">Sin devoluciones una vez iniciado el trabajo</div><div class="term-sub-text">El tiempo invertido tiene valor. El pago adelantado no se reembolsa.</div></div></div>
 <div class="confirm-box">
