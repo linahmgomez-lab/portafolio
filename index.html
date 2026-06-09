@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lina Rachez — Servicios Digitales con Propósito</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f4f0e8;padding:1.5rem;min-height:100vh}
+.wrap{display:flex;flex-direction:column;gap:16px;max-width:520px;margin:0 auto}
+.header{background:#1B4332;border-radius:16px;padding:1.75rem 1.5rem;position:relative;overflow:hidden}
+.h-name{font-size:22px;font-weight:500;color:#D4AF37;margin-bottom:4px}
+.h-tag{font-size:11px;color:rgba(255,255,255,0.45);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.25rem}
+.h-divider{height:0.5px;background:linear-gradient(to right,rgba(212,175,55,0.4),transparent);margin-bottom:1rem}
+.h-row{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,0.55);margin-bottom:4px}
+.section-label{font-size:10px;font-weight:500;color:#6B5B2A;letter-spacing:0.14em;text-transform:uppercase}
+.case-card{background:#fff;border:0.5px solid #e0ddd5;border-radius:14px;overflow:hidden}
+.case-top{background:#F5F0E8;padding:1rem 1.25rem;border-bottom:0.5px solid #e0ddd5}
+.case-top2{background:#E8F0EE;padding:1rem 1.25rem;border-bottom:0.5px solid #e0ddd5}
+.case-top3{background:#E8EEF5;padding:1rem 1.25rem;border-bottom:0.5px solid #e0ddd5}
+.case-client{font-size:13px;font-weight:500;color:#1B4332;margin-bottom:2px}
+.case-service{font-size:11px;color:#6B5B2A;letter-spacing:0.06em;text-transform:uppercase}
+.case-service2{font-size:11px;color:#2D6A4F;letter-spacing:0.06em;text-transform:uppercase}
+.case-service3{font-size:11px;color:#1A3A5C;letter-spacing:0.06em;text-transform:uppercase}
+.case-body{padding:1rem 1.25rem}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem}
+.metric{background:#F5F0E8;border-radius:8px;padding:.6rem .5rem;text-align:center}
+.metric2{background:#E8F0EE;border-radius:8px;padding:.6rem .5rem;text-align:center}
+.metric3{background:#E8EEF5;border-radius:8px;padding:.6rem .5rem;text-align:center}
+.mv{font-size:17px;font-weight:500;color:#1B4332;margin-bottom:2px}
+.mv3{font-size:17px;font-weight:500;color:#1A3A5C;margin-bottom:2px}
+.ml{font-size:10px;color:#6B5B2A}
+.ml2{font-size:10px;color:#2D6A4F}
+.ml3{font-size:10px;color:#1A3A5C}
+.work-list{display:flex;flex-direction:column;gap:6px}
+.work-item{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#555;line-height:1.5}
+.offer-card{background:#1B4332;border-radius:14px;padding:1.25rem 1.5rem}
+.offer-title{font-size:13px;font-weight:500;color:#D4AF37;margin-bottom:1rem}
+.offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem}
+.offer-pkg{background:rgba(255,255,255,0.05);border:0.5px solid rgba(212,175,55,0.2);border-radius:10px;padding:.75rem .5rem;text-align:center}
+.offer-price{font-size:15px;font-weight:500;color:#D4AF37;margin-bottom:3px}
+.offer-name{font-size:10px;color:rgba(255,255,255,0.5);line-height:1.4}
+.offer-detail{font-size:9px;color:rgba(255,255,255,0.25);margin-top:3px}
+.offer-divider{height:0.5px;background:rgba(212,175,55,0.15);margin:.75rem 0}
+.pay-row{display:flex;gap:8px;flex-wrap:wrap}
+.pay-pill{font-size:11px;padding:4px 10px;border-radius:20px;border:0.5px solid rgba(212,175,55,0.25);color:rgba(212,175,55,0.7)}
+.terms-card{background:#fff;border:0.5px solid #e0ddd5;border-radius:14px;overflow:hidden}
+.terms-top{background:#1B4332;padding:1rem 1.25rem}
+.terms-title{font-size:13px;font-weight:500;color:#D4AF37}
+.terms-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px}
+.term-row{display:flex;align-items:flex-start;gap:10px;padding:10px 1.25rem;border-bottom:0.5px solid #e0ddd5}
+.term-row:last-child{border-bottom:none}
+.term-num{background:#1B4332;color:#D4AF37;font-size:11px;font-weight:500;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.term-text{font-size:12px;color:#1B1B1B;font-weight:500;margin-bottom:2px}
+.term-sub-text{font-size:11px;color:#666;line-height:1.5}
+.confirm-box{background:#F5F0E8;padding:1rem 1.25rem}
+.confirm-label{font-size:10px;color:#6B5B2A;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:.5rem}
+.confirm-text{font-size:12px;color:#1B1B1B;line-height:1.7;font-style:italic;background:white;border-radius:8px;padding:.75rem 1rem;border:0.5px solid #D4AF37}
+.cta{background:#F5F0E8;border-radius:14px;padding:1.25rem 1.5rem;text-align:center}
+.cta-text{font-size:13px;color:#1B1B1B;margin-bottom:1rem;line-height:1.5;font-weight:500}
+.cta-btn{display:flex;align-items:center;justify-content:center;gap:8px;background-color:#1B4332;border-radius:30px;padding:14px 24px;width:100%;text-decoration:none}
+.cta-btn span{font-size:14px;font-weight:500;color:#ffffff}
+.schema{font-size:11px;color:#6B5B2A;margin-top:.75rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="header">
+<div class="h-name">Lina Rachez</div>
+<div class="h-tag">Servicios digitales con propósito</div>
+<div class="h-divider"></div>
+<div class="h-row">📱 +57 311 433 3030</div>
+<div class="h-row">✉️ linahmgomez@gmail.com</div>
+<div class="h-row">🌎 Remoto · Colombia · EE.UU</div>
+</div>
+<div class="section-label">Casos de trabajo real</div>
+<div class="case-card">
+<div class="case-top">
+<div class="case-client">Colchones Confort Jireh — Google Maps</div>
+<div class="case-service">Optimización de perfil + reseñas + fotos</div>
+</div>
+<div class="case-body">
+<div class="metrics">
+<div class="metric"><div class="mv">5.0 ⭐</div><div class="ml">Calificación</div></div>
+<div class="metric"><div class="mv">16</div><div class="ml">Reseñas</div></div>
+<div class="metric"><div class="mv">565</div><div class="ml">Vistas/mes</div></div>
+</div>
+<div class="work-list">
+<div class="work-item">✓ 265 interacciones y 50 búsquedas mensuales orgánicas</div>
+<div class="work-item">✓ Fotos activas, datos completos y reseñas gestionadas</div>
+<div class="work-item">✓ Calificación perfecta 5.0 mantenida</div>
+</div>
+</div>
+</div>
+<div class="case-card">
+<div class="case-top3">
+<div class="case-client">Colchones Confort Jireh — Tienda web</div>
+<div class="case-service3">Página web + catálogo + pasarela de pago</div>
+</div>
+<div class="case-body">
+<div class="metrics">
+<div class="metric3"><div class="mv3">6</div><div class="ml3">Categorías</div></div>
+<div class="metric3"><div class="mv3">✓</div><div class="ml3">Pagos online</div></div>
+<div class="metric3"><div class="mv3">✓</div><div class="ml3">Envío gratis</div></div>
+</div>
+<div class="work-list">
+<div class="work-item">✓ Tienda online completa en Tiendanube</div>
+<div class="work-item">✓ Catálogo con colchones, bases, cabeceros y más</div>
+<div class="work-item">✓ Mercado Pago, Nequi, Daviplata y Bancolombia integrados</div>
+<div class="work-item">✓ Instagram, Facebook, TikTok y YouTube vinculados</div>
+</div>
+</div>
+</div>
+<div class="case-card">
+<div class="case-top2">
+<div class="case-client">Kéfir Glow</div>
+<div class="case-service2">Marca + Tienda online + Identidad digital</div>
+</div>
+<div class="case-body">
+<div class="metrics">
+<div class="metric2"><div class="mv">✓</div><div class="ml2">Marca creada</div></div>
+<div class="metric2"><div class="mv">✓</div><div class="ml2">Tienda activa</div></div>
+<div class="metric2"><div class="mv">✓</div><div class="ml2">Pagos integrados</div></div>
+</div>
+<div class="work-list">
+<div class="work-item">✓ Creación de marca desde cero: nombre, logo, identidad</div>
+<div class="work-item">✓ Tienda online con productos, guía de uso y políticas</div>
+<div class="work-item">✓ Cosmética artesanal a base de kéfir — nicho diferenciado</div>
+<div class="work-item">✓ Pasarela de pago integrada (Nequi, Daviplata, NU)</div>
+</div>
+</div>
+</div>
+<div class="section-label">Servicios y precios</div>
+<div class="offer-card">
+<div class="offer-title">¿Qué puedo hacer por tu negocio?</div>
+<div class="offer-grid">
+<div class="offer-pkg"><div class="offer-price">$150k</div><div class="offer-name">Google Maps</div><div class="offer-detail">Pago único · 24h</div></div>
+<div class="offer-pkg"><div class="offer-price">$300k</div><div class="offer-name">Presencia digital</div><div class="offer-detail">50/50 · 48h</div></div>
+<div class="offer-pkg"><div class="offer-price">$500k</div><div class="offer-name">Automatización</div><div class="offer-detail">50/50 · 72h</div></div>
+</div>
+<div class="offer-divider"></div>
+<div class="pay-row">
+<div class="pay-pill">🏦 Bancolombia</div>
+<div class="pay-pill">💳 NU</div>
+<div class="pay-pill">💵 Efectivo</div>
+</div>
+</div>
+<div class="section-label">Condiciones de trabajo</div>
+<div class="terms-card">
+<div class="terms-top">
+<div class="terms-title">Así trabajamos juntos</div>
+<div class="terms-sub">Para que todo sea claro desde el inicio</div>
+</div>
+<div class="term-row"><div class="term-num">1</div><div><div class="term-text">Confirmación por escrito antes de empezar</div><div class="term-sub-text">Acuerdo del servicio, valor y forma de pago vía WhatsApp.</div></div></div>
+<div class="term-row"><div class="term-num">2</div><div><div class="term-text">Pago antes de iniciar el trabajo</div><div class="term-sub-text">Google Maps: pago completo. Paquetes $300k y $500k: 50% al inicio, 50% al entregar.</div></div></div>
+<div class="term-row"><div class="term-num">3</div><div><div class="term-text">Accesos y entregables al recibir el saldo</div><div class="term-sub-text">Claves y archivos finales se entregan cuando el pago está completo.</div></div></div>
+<div class="term-row"><div class="term-num">4</div><div><div class="term-text">Sin devoluciones una vez iniciado el trabajo</div><div class="term-sub-text">El tiempo invertido tiene valor. El pago adelantado no se reembolsa.</div></div></div>
+<div class="confirm-box">
+<div class="confirm-label">Mensaje de confirmación antes de empezar</div>
+<div class="confirm-text">"Hola [nombre], confirmo el servicio de [X] por $[X]. Pago: [contado / 50% hoy y 50% al entregar]. Una vez reciba el pago iniciamos. ¿Confirmas?"</div>
+</div>
+</div>
+<div class="cta">
+<div class="cta-text">¿Quieres que más personas encuentren tu negocio en Google y lleguen solos a tu WhatsApp?</div>
+<a href="https://wa.me/573114333030" class="cta-btn"><span>📱 Escríbeme por WhatsApp</span></a>
+<div class="schema">Respondo en menos de 2 horas · Bogotá, Colombia</div>
+</div>
+</div>
+</body>
+</html>
