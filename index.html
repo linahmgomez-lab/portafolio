@@ -6,23 +6,7 @@
 <title>Lina Rachez — Consultora Digital con IA</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
-:root {
-  --negro: #0A0A0F;
-  --negro2: #111118;
-  --negro3: #18181F;
-  --negro4: #222230;
-  --verde: #00E5A0;
-  --verde-dim: rgba(0,229,160,0.12);
-  --verde-glow: rgba(0,229,160,0.25);
-  --dorado: #F0B429;
-  --dorado-dim: rgba(240,180,41,0.12);
-  --blanco: #FFFFFF;
-  --gris1: #F0EEE8;
-  --gris2: #A8A89C;
-  --gris3: #52524A;
-  --borde: rgba(255,255,255,0.08);
-  --borde-verde: rgba(0,229,160,0.2);
-}
+:root{--negro:#0A0A0F;--negro2:#111118;--negro3:#18181F;--negro4:#222230;--verde:#00E5A0;--verde-dim:rgba(0,229,160,0.12);--verde-glow:rgba(0,229,160,0.25);--dorado:#F0B429;--dorado-dim:rgba(240,180,41,0.12);--blanco:#FFFFFF;--gris1:#F0EEE8;--gris2:#A8A89C;--gris3:#52524A;--borde:rgba(255,255,255,0.08);--borde-verde:rgba(0,229,160,0.2)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:var(--gris1);font-size:16px;line-height:1.7;overflow-x:hidden}
@@ -183,18 +167,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
 .flotante.show{display:inline-flex;align-items:center;gap:8px}
 .rv{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease}
 .rv.in{opacity:1;transform:translateY(0)}
-@media(max-width:600px){
-  .hero-stats{flex-direction:column}
-  .hero-stat{border-right:none;border-bottom:1px solid var(--borde)}
-  .hero-stat:last-child{border-bottom:none}
-  .res-nums{grid-template-columns:1fr}
-  .res-num-item{border-right:none;border-bottom:1px solid var(--borde)}
-  .serv-checks{grid-template-columns:1fr}
-  .bio-card{padding:24px}
-  .bio-head{flex-direction:column}
-  .cta-mid{padding:28px 20px}
-  .flotante{bottom:16px;right:16px}
-}
+@media(max-width:600px){.hero-stats{flex-direction:column}.hero-stat{border-right:none;border-bottom:1px solid var(--borde)}.hero-stat:last-child{border-bottom:none}.res-nums{grid-template-columns:1fr}.res-num-item{border-right:none;border-bottom:1px solid var(--borde)}.serv-checks{grid-template-columns:1fr}.bio-card{padding:24px}.bio-head{flex-direction:column}.cta-mid{padding:28px 20px}.flotante{bottom:16px;right:16px}}
 </style>
 </head>
 <body>
@@ -217,8 +190,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
       <a href="https://wa.me/573114333030?text=Hola%20Lina%2C%20quiero%20saber%20c%C3%B3mo%20puedes%20ayudarme" class="btn-secondary" target="_blank">WhatsApp directo</a>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num"><span>565</span></div><div class="hero-stat-label">Vistas/mes Google Maps sin publicidad</div></div>
-      <div class="hero-stat"><div class="hero-stat-num"><span>5.0</span> ★</div><div class="hero-stat-label">Calificación mantenida cliente real</div></div>
+      <div class="hero-stat"><div class="hero-stat-num"><span>568</span></div><div class="hero-stat-label">Vistas Google Maps · cliente real · sin pauta</div></div>
+      <div class="hero-stat"><div class="hero-stat-num"><span>7.4K</span></div><div class="hero-stat-label">Vistas TikTok / semana · 100% orgánico</div></div>
       <div class="hero-stat"><div class="hero-stat-num"><span>48h</span></div><div class="hero-stat-label">Tiempo de entrega promedio</div></div>
     </div>
   </div>
@@ -366,12 +339,12 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
         <input class="form-input" id="inputUrgente" type="text" placeholder="Ej: Nadie me encuentra en Google">
       </div>
       <div class="form-grupo">
-        <label class="form-label">¿Cuánto puedes invertir en tu presencia digital ahora mismo? <span>*</span></label>
+        <label class="form-label">¿Cuánto puedes invertir ahora mismo? <span>*</span></label>
         <div class="form-opciones" id="opcionesPresupuesto">
           <label class="form-opcion" onclick="selOpc(this,'presupuesto')" data-bloquear="si"><input type="radio" name="presupuesto" value="explorando"><div class="form-opcion-dot"></div><span class="form-opcion-txt">Menos de $100k COP — todavía explorando</span></label>
           <label class="form-opcion" onclick="selOpc(this,'presupuesto')"><input type="radio" name="presupuesto" value="basico"><div class="form-opcion-dot"></div><span class="form-opcion-txt">$100k–$300k COP — listo para empezar</span></label>
           <label class="form-opcion" onclick="selOpc(this,'presupuesto')"><input type="radio" name="presupuesto" value="completo"><div class="form-opcion-dot"></div><span class="form-opcion-txt">$300k–$700k COP — quiero algo completo</span></label>
-          <label class="form-opcion" onclick="selOpc(this,'presupuesto')"><input type="radio" name="presupuesto" value="serio"><div class="form-opcion-dot"></div><span class="form-opcion-txt">Más de $700k COP / pago en USD — quiero resultados serios</span></label>
+          <label class="form-opcion" onclick="selOpc(this,'presupuesto')"><input type="radio" name="presupuesto" value="serio"><div class="form-opcion-dot"></div><span class="form-opcion-txt">Más de $700k COP / USD — quiero resultados serios</span></label>
         </div>
       </div>
       <button class="btn-continuar" id="btnContinuar" onclick="procesarFormulario()" disabled>Continuar →</button>
@@ -380,7 +353,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
       <div style="text-align:center;padding:20px 0 8px;">
         <div style="font-size:32px;margin-bottom:12px;">🌱</div>
         <div style="font-size:16px;font-weight:700;color:var(--blanco);margin-bottom:8px;">¡Gracias por tu honestidad!</div>
-        <div style="font-size:14px;color:var(--gris2);line-height:1.6;margin-bottom:20px;">Ahora mismo mis servicios requieren una inversión mínima que aún no está en tu presupuesto — y eso está completamente bien. Guarda mi contacto para cuando estés listo. Mientras tanto, sígueme en Instagram donde comparto tips gratuitos.</div>
+        <div style="font-size:14px;color:var(--gris2);line-height:1.6;margin-bottom:20px;">Ahora mismo mis servicios requieren una inversión mínima que aún no está en tu presupuesto — y eso está bien. Guarda mi contacto para cuando estés listo. Sígueme en Instagram donde comparto tips gratuitos.</div>
         <a href="https://www.instagram.com/linarachez" class="btn-continuar" target="_blank" style="display:flex;">Seguir en Instagram →</a>
         <button onclick="cerrarModal()" style="width:100%;margin-top:8px;background:transparent;border:1px solid var(--borde);color:var(--gris2);padding:10px;border-radius:8px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;">Cerrar</button>
       </div>
@@ -388,7 +361,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
     <div id="paso2aprobado" style="display:none;">
       <div class="modal-serv-nombre" id="modalServNombre2"></div>
       <div class="modal-titulo">¡Perfecto! Estás<br>listo para empezar.</div>
-      <div class="modal-sub">Haz clic abajo para escribirme por WhatsApp. Tu información ya va lista en el mensaje.</div>
+      <div class="modal-sub">Tu información ya va lista en el mensaje. Solo toca enviar.</div>
       <div style="background:var(--negro4);border:1px solid var(--borde);border-radius:10px;padding:14px 16px;margin-bottom:20px;font-size:13px;color:var(--gris2);line-height:1.6;" id="resumenInfo"></div>
       <a class="btn-continuar" id="btnWhatsapp" href="#" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A0A0F"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.836L.057 23.25l5.562-1.453A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.366l-.359-.214-3.306.864.883-3.218-.234-.37A9.818 9.818 0 1112 21.818z"/></svg>
@@ -414,7 +387,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
       <div class="fe-bloque"><div class="fe-icon">✦</div><div><div class="fe-v">"Todo lo que te viniere a la mano para hacer, hazlo según tus fuerzas."</div><div class="fe-r">Eclesiastés 9:10</div></div></div>
       <div class="bio-stats">
         <div><div class="bs-n"><span>6</span> años</div><div class="bs-l">Experiencia EE.UU.</div></div>
-        <div><div class="bs-n"><span>65K</span></div><div class="bs-l">Vistas TikTok desde cero</div></div>
+        <div><div class="bs-n"><span>7.4K</span></div><div class="bs-l">Vistas TikTok / semana · orgánico</div></div>
         <div><div class="bs-n"><span>3</span> países</div><div class="bs-l">Colombia · México · España</div></div>
       </div>
     </div>
@@ -426,24 +399,58 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
     <div class="label">Resultados reales — no promesas</div>
     <h2 class="h2">Números que<br><em>hablan solos.</em></h2>
     <div class="resultado-bloque" style="margin-bottom:16px;">
-      <div class="res-empresa">Caso de éxito · Bogotá, Colombia</div>
+      <div class="res-empresa">Caso real · Google Maps · Bogotá, Colombia</div>
       <div class="res-titulo">Colchones Confort Jireh — presencia digital optimizada</div>
       <div class="res-nums">
-        <div class="res-num-item"><div class="res-n">565</div><div class="res-l">Vistas/mes</div><div class="res-d">Google Maps sin publicidad pagada</div></div>
-        <div class="res-num-item"><div class="res-n">5.0</div><div class="res-l">Calificación</div><div class="res-d">16 reseñas gestionadas</div></div>
-        <div class="res-num-item"><div class="res-n">265</div><div class="res-l">Interacciones</div><div class="res-d">Clics, llamadas y rutas al mes</div></div>
+        <div class="res-num-item"><div class="res-n">568</div><div class="res-l">Vistas</div><div class="res-d">Google Maps ene–jun 2026 sin publicidad</div></div>
+        <div class="res-num-item"><div class="res-n">265</div><div class="res-l">Interacciones</div><div class="res-d">Clics, llamadas y solicitudes de ruta</div></div>
+        <div class="res-num-item"><div class="res-n">50</div><div class="res-l">Búsquedas</div><div class="res-d">Personas que buscaron el negocio directamente</div></div>
       </div>
-      <div class="res-nota">Esto es lo que pasa cuando tu perfil digital está optimizado. No magia — mayordomía digital.</div>
+      <div class="res-nota">Perfil al 80% de eficacia · 5.0 estrellas · 16 reseñas gestionadas. Todo orgánico, sin invertir en pauta.</div>
+    </div>
+    <div class="resultado-bloque" style="margin-bottom:16px;">
+      <div class="res-empresa">Caso real · TikTok · Marca de cosmética natural</div>
+      <div class="res-titulo">Contenido para marca propia — construido desde cero, sin seguidores</div>
+      <div class="res-nums">
+        <div class="res-num-item"><div class="res-n">7.4K</div><div class="res-l">Vistas / semana</div><div class="res-d">Promedio últimos 7 días en TikTok</div></div>
+        <div class="res-num-item"><div class="res-n">5.2K</div><div class="res-l">Video top</div><div class="res-d">Un solo video en los últimos 7 días</div></div>
+        <div class="res-num-item"><div class="res-n">75.6%</div><div class="res-l">Tráfico orgánico</div><div class="res-d">Viene del "Para ti" — algoritmo empujando</div></div>
+      </div>
+      <div class="res-nota">160 me gusta · 49 compartidos · 10 comentarios · $0 en publicidad pagada. El contenido bien hecho trabaja solo.</div>
     </div>
     <div class="resultado-bloque">
-      <div class="res-empresa">Contenido propio · TikTok desde cero</div>
-      <div class="res-titulo">Dos cuentas construidas desde cero — sin seguidores, sin base</div>
-      <div class="res-nums">
-        <div class="res-num-item"><div class="res-n">65K</div><div class="res-l">Vistas · 1 video</div><div class="res-d">Una publicación desde cuenta nueva</div></div>
-        <div class="res-num-item"><div class="res-n">10K</div><div class="res-l">Vistas · otro video</div><div class="res-d">Segunda cuenta, también desde cero</div></div>
-        <div class="res-num-item"><div class="res-n">$0</div><div class="res-l">Inversión ads</div><div class="res-d">100% crecimiento orgánico</div></div>
+      <div class="res-empresa">Videos de muestra · Portafolio con IA · Tres nichos</div>
+      <div class="res-titulo">Así queda tu negocio — ejemplos generados con IA</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px;margin-bottom:16px;">
+        <div style="background:var(--negro4);border:1px solid var(--borde);border-radius:10px;overflow:hidden;">
+          <div style="background:linear-gradient(135deg,#1A3A2A,#0A1A12);padding:28px 20px;text-align:center;"><div style="font-size:28px;margin-bottom:8px;">🌿</div><div style="font-size:13px;font-weight:600;color:var(--verde);margin-bottom:4px;">SPA & ESTÉTICA</div><div style="font-size:11px;color:var(--gris2);">Ambiente, tratamientos, lujo</div></div>
+          <div style="padding:12px 14px;"><div style="font-size:11px;color:var(--gris3);margin-bottom:4px;">Video de muestra · IA generativa</div><div style="font-size:12px;color:var(--gris2);line-height:1.5;">Clip cinematográfico generado con Kling AI. Listo para reel o story.</div></div>
+        </div>
+        <div style="background:var(--negro4);border:1px solid var(--borde);border-radius:10px;overflow:hidden;">
+          <div style="background:linear-gradient(135deg,#1A2A3A,#0A0F1A);padding:28px 20px;text-align:center;"><div style="font-size:28px;margin-bottom:8px;">🦷</div><div style="font-size:13px;font-weight:600;color:var(--verde);margin-bottom:4px;">CLÍNICA & SALUD</div><div style="font-size:11px;color:var(--gris2);">Confianza, modernidad, profesionalismo</div></div>
+          <div style="padding:12px 14px;"><div style="font-size:11px;color:var(--gris3);margin-bottom:4px;">Video de muestra · IA generativa</div><div style="font-size:12px;color:var(--gris2);line-height:1.5;">Ambiente clínico moderno. Transmite confianza desde el primer frame.</div></div>
+        </div>
+        <div style="background:var(--negro4);border:1px solid var(--borde);border-radius:10px;overflow:hidden;">
+          <div style="background:linear-gradient(135deg,#2A1A0A,#1A0A00);padding:28px 20px;text-align:center;"><div style="font-size:28px;margin-bottom:8px;">🍽</div><div style="font-size:13px;font-weight:600;color:var(--dorado);margin-bottom:4px;">RESTAURANTE & COMIDA</div><div style="font-size:11px;color:var(--gris2);">Gastronomía, ambiente, experiencia</div></div>
+          <div style="padding:12px 14px;"><div style="font-size:11px;color:var(--gris3);margin-bottom:4px;">Video de muestra · IA generativa</div><div style="font-size:12px;color:var(--gris2);line-height:1.5;">Plating gourmet generado con IA. Perfecto para redes sociales.</div></div>
+        </div>
       </div>
-      <div class="res-nota">Si logro eso con mis propias cuentas desde cero — imagina lo que puedo hacer con la tuya.</div>
+      <div class="res-nota">Estos son videos de muestra — no son clientes reales. Los creo para mostrarte cómo quedaría tu negocio. ¿Quieres ver cómo quedaría el tuyo?</div>
+    </div>
+  </div>
+</section>
+
+<section class="s-alt">
+  <div class="c rv">
+    <div class="label">Herramientas que uso</div>
+    <h2 class="h2">Tecnología real.<br><em>Resultados medibles.</em></h2>
+    <p class="h2-sub" style="margin-bottom:32px;">No trabajo con herramientas básicas. Uso lo mismo que usan las mejores agencias del mundo — y te cobro sin intermediarios.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;">
+      <div style="background:var(--negro2);border:1px solid var(--borde);border-radius:10px;padding:18px 16px;text-align:center;"><div style="font-size:24px;margin-bottom:8px;">🎬</div><div style="font-size:13px;font-weight:700;color:var(--blanco);margin-bottom:4px;">Kling AI</div><div style="font-size:11px;color:var(--gris2);">Generación de video con IA · calidad cinematográfica</div></div>
+      <div style="background:var(--negro2);border:1px solid var(--borde);border-radius:10px;padding:18px 16px;text-align:center;"><div style="font-size:24px;margin-bottom:8px;">✂️</div><div style="font-size:13px;font-weight:700;color:var(--blanco);margin-bottom:4px;">CapCut</div><div style="font-size:11px;color:var(--gris2);">Edición profesional · subtítulos · efectos</div></div>
+      <div style="background:var(--negro2);border:1px solid var(--borde);border-radius:10px;padding:18px 16px;text-align:center;"><div style="font-size:24px;margin-bottom:8px;">🎙</div><div style="font-size:13px;font-weight:700;color:var(--blanco);margin-bottom:4px;">ElevenLabs</div><div style="font-size:11px;color:var(--gris2);">Voz en off IA · español natural y realista</div></div>
+      <div style="background:var(--negro2);border:1px solid var(--borde);border-radius:10px;padding:18px 16px;text-align:center;"><div style="font-size:24px;margin-bottom:8px;">👤</div><div style="font-size:13px;font-weight:700;color:var(--blanco);margin-bottom:4px;">HeyGen</div><div style="font-size:11px;color:var(--gris2);">Avatar IA · videos corporativos con presentador</div></div>
+      <div style="background:var(--negro2);border:1px solid var(--borde);border-radius:10px;padding:18px 16px;text-align:center;"><div style="font-size:24px;margin-bottom:8px;">🤖</div><div style="font-size:13px;font-weight:700;color:var(--blanco);margin-bottom:4px;">Claude / ChatGPT</div><div style="font-size:11px;color:var(--gris2);">Guiones · copy · estrategia de contenido</div></div>
     </div>
   </div>
 </section>
