@@ -3,174 +3,433 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lina Rachez — Servicios Digitales con Propósito</title>
+<title>Lina Rachez — Consultora Digital con IA</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f4f0e8;padding:1.5rem;min-height:100vh}
-.wrap{display:flex;flex-direction:column;gap:16px;max-width:520px;margin:0 auto}
-.header{background:#1B4332;border-radius:16px;padding:1.75rem 1.5rem;position:relative;overflow:hidden}
-.h-name{font-size:22px;font-weight:500;color:#D4AF37;margin-bottom:4px}
-.h-tag{font-size:11px;color:rgba(255,255,255,0.45);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.25rem}
-.h-divider{height:0.5px;background:linear-gradient(to right,rgba(212,175,55,0.4),transparent);margin-bottom:1rem}
-.h-row{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,0.55);margin-bottom:4px}
-.section-label{font-size:10px;font-weight:500;color:#6B5B2A;letter-spacing:0.14em;text-transform:uppercase}
-.case-card{background:#fff;border:0.5px solid #e0ddd5;border-radius:14px;overflow:hidden}
-.case-top{background:#F5F0E8;padding:1rem 1.25rem;border-bottom:0.5px solid #e0ddd5}
-.case-top2{background:#E8F0EE;padding:1rem 1.25rem;border-bottom:0.5px solid #e0ddd5}
-.case-top3{background:#E8EEF5;padding:1rem 1.25rem;border-bottom:0.5px solid #e0ddd5}
-.case-client{font-size:13px;font-weight:500;color:#1B4332;margin-bottom:2px}
-.case-service{font-size:11px;color:#6B5B2A;letter-spacing:0.06em;text-transform:uppercase}
-.case-service2{font-size:11px;color:#2D6A4F;letter-spacing:0.06em;text-transform:uppercase}
-.case-service3{font-size:11px;color:#1A3A5C;letter-spacing:0.06em;text-transform:uppercase}
-.case-body{padding:1rem 1.25rem}
-.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem}
-.metric{background:#F5F0E8;border-radius:8px;padding:.6rem .5rem;text-align:center}
-.metric2{background:#E8F0EE;border-radius:8px;padding:.6rem .5rem;text-align:center}
-.metric3{background:#E8EEF5;border-radius:8px;padding:.6rem .5rem;text-align:center}
-.mv{font-size:17px;font-weight:500;color:#1B4332;margin-bottom:2px}
-.mv3{font-size:17px;font-weight:500;color:#1A3A5C;margin-bottom:2px}
-.ml{font-size:10px;color:#6B5B2A}
-.ml2{font-size:10px;color:#2D6A4F}
-.ml3{font-size:10px;color:#1A3A5C}
-.work-list{display:flex;flex-direction:column;gap:6px}
-.work-item{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#555;line-height:1.5}
-.offer-card{background:#1B4332;border-radius:14px;padding:1.25rem 1.5rem}
-.offer-title{font-size:13px;font-weight:500;color:#D4AF37;margin-bottom:1rem}
-.svc-list{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem}
-.svc{background:rgba(255,255,255,0.05);border:0.5px solid rgba(212,175,55,0.2);border-radius:10px;padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:10px}
-.svc-name{font-size:12px;font-weight:500;color:#ffffff;margin-bottom:2px}
-.svc-desc{font-size:10px;color:rgba(255,255,255,0.4);line-height:1.4}
-.svc-price{font-size:14px;font-weight:500;color:#D4AF37;display:block}
-.svc-time{font-size:9px;color:rgba(255,255,255,0.3)}
-.svc-right{text-align:right;flex-shrink:0}
-.offer-divider{height:0.5px;background:rgba(212,175,55,0.15);margin:.75rem 0}
-.pay-row{display:flex;gap:8px;flex-wrap:wrap}
-.pay-pill{font-size:11px;padding:4px 10px;border-radius:20px;border:0.5px solid rgba(212,175,55,0.25);color:rgba(212,175,55,0.7)}
-.terms-card{background:#fff;border:0.5px solid #e0ddd5;border-radius:14px;overflow:hidden}
-.terms-top{background:#1B4332;padding:1rem 1.25rem}
-.terms-title{font-size:13px;font-weight:500;color:#D4AF37}
-.terms-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px}
-.term-row{display:flex;align-items:flex-start;gap:10px;padding:10px 1.25rem;border-bottom:0.5px solid #e0ddd5}
-.term-row:last-child{border-bottom:none}
-.term-num{background:#1B4332;color:#D4AF37;font-size:11px;font-weight:500;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.term-text{font-size:12px;color:#1B1B1B;font-weight:500;margin-bottom:2px}
-.term-sub-text{font-size:11px;color:#666;line-height:1.5}
-.confirm-box{background:#F5F0E8;padding:1rem 1.25rem}
-.confirm-label{font-size:10px;color:#6B5B2A;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:.5rem}
-.confirm-text{font-size:12px;color:#1B1B1B;line-height:1.7;font-style:italic;background:white;border-radius:8px;padding:.75rem 1rem;border:0.5px solid #D4AF37}
-.cta{background:#F5F0E8;border-radius:14px;padding:1.25rem 1.5rem;text-align:center}
-.cta-text{font-size:13px;color:#1B1B1B;margin-bottom:1rem;line-height:1.5;font-weight:500}
-.cta-btn{display:flex;align-items:center;justify-content:center;gap:8px;background-color:#1B4332;border-radius:30px;padding:14px 24px;width:100%;text-decoration:none}
-.cta-btn span{font-size:14px;font-weight:500;color:#ffffff}
-.schema{font-size:11px;color:#6B5B2A;margin-top:.75rem}
+:root {
+  --negro: #0A0A0F;
+  --negro2: #111118;
+  --negro3: #18181F;
+  --negro4: #222230;
+  --verde: #00E5A0;
+  --verde-dim: rgba(0,229,160,0.12);
+  --verde-glow: rgba(0,229,160,0.25);
+  --dorado: #F0B429;
+  --dorado-dim: rgba(240,180,41,0.12);
+  --blanco: #FFFFFF;
+  --gris1: #F0EEE8;
+  --gris2: #A8A89C;
+  --gris3: #52524A;
+  --borde: rgba(255,255,255,0.08);
+  --borde-verde: rgba(0,229,160,0.2);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--negro);
+  color: var(--gris1);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+.c { max-width: 780px; margin: 0 auto; padding: 0 28px; }
+.c-sm { max-width: 620px; margin: 0 auto; padding: 0 28px; }
+.display { font-family: 'Syne', sans-serif; font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; }
+.topbar { background: var(--negro2); border-bottom: 1px solid var(--borde); padding: 11px 28px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; backdrop-filter: blur(12px); }
+.topbar-logo { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: var(--blanco); text-decoration: none; }
+.topbar-logo span { color: var(--verde); }
+.topbar-cta { background: var(--verde); color: var(--negro); font-weight: 700; font-size: 13px; padding: 8px 18px; border-radius: 6px; text-decoration: none; transition: opacity 0.2s; }
+.topbar-cta:hover { opacity: 0.85; }
+.hero { min-height: 92vh; display: flex; align-items: center; padding: 80px 28px; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 70% 30%, rgba(0,229,160,0.07) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 20% 80%, rgba(240,180,41,0.05) 0%, transparent 60%); }
+.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%); }
+.hero-inner { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; width: 100%; }
+.hero-tag { display: inline-flex; align-items: center; gap: 8px; background: var(--verde-dim); border: 1px solid var(--borde-verde); border-radius: 100px; padding: 6px 14px 6px 10px; font-size: 12px; font-weight: 600; color: var(--verde); margin-bottom: 32px; letter-spacing: 0.04em; text-transform: uppercase; }
+.hero-tag-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--verde); animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+.hero h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(42px, 7vw, 76px); line-height: 1.0; letter-spacing: -0.03em; color: var(--blanco); margin-bottom: 24px; }
+.hero h1 .verde { color: var(--verde); }
+.hero h1 .dorado { color: var(--dorado); }
+.hero-sub { font-size: 18px; color: var(--gris2); max-width: 520px; line-height: 1.65; margin-bottom: 12px; }
+.hero-quote { font-size: 14px; color: var(--gris3); font-style: italic; max-width: 460px; margin-bottom: 40px; padding-left: 14px; border-left: 2px solid var(--verde-dim); }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 56px; }
+.btn-primary { background: var(--verde); color: var(--negro); font-weight: 700; font-size: 15px; padding: 15px 32px; border-radius: 8px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+.btn-primary:hover { background: #00cccc; transform: translateY(-1px); }
+.btn-secondary { background: transparent; color: var(--gris1); font-weight: 500; font-size: 15px; padding: 14px 28px; border-radius: 8px; text-decoration: none; border: 1px solid var(--borde); transition: all 0.2s; }
+.btn-secondary:hover { border-color: rgba(255,255,255,0.2); color: var(--blanco); }
+.hero-stats { display: flex; gap: 0; border: 1px solid var(--borde); border-radius: 12px; background: var(--negro2); overflow: hidden; max-width: 480px; }
+.hero-stat { flex: 1; padding: 20px 24px; border-right: 1px solid var(--borde); }
+.hero-stat:last-child { border-right: none; }
+.hero-stat-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 28px; color: var(--blanco); line-height: 1; margin-bottom: 4px; }
+.hero-stat-num span { color: var(--verde); }
+.hero-stat-label { font-size: 11px; color: var(--gris3); line-height: 1.3; }
+.s { padding: 88px 0; }
+.s-dark { background: var(--negro2); padding: 88px 0; border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde); }
+.s-alt { background: var(--negro3); padding: 88px 0; }
+.label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--verde); margin-bottom: 14px; }
+.h2 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 42px); color: var(--blanco); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; }
+.h2 em { font-style: italic; color: var(--verde); font-family: inherit; }
+.h2-sub { font-size: 16px; color: var(--gris2); line-height: 1.6; max-width: 520px; }
+.para-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2px; margin-top: 40px; background: var(--borde); border-radius: 12px; overflow: hidden; }
+.para-item { background: var(--negro2); padding: 28px 24px; transition: background 0.2s; }
+.para-item:hover { background: var(--negro3); }
+.para-num { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; color: var(--verde); letter-spacing: 0.1em; margin-bottom: 12px; }
+.para-titulo { font-size: 15px; font-weight: 600; color: var(--blanco); margin-bottom: 8px; }
+.para-desc { font-size: 13px; color: var(--gris2); line-height: 1.5; }
+.servicios { display: flex; flex-direction: column; gap: 2px; margin-top: 40px; }
+.servicio { background: var(--negro2); border-radius: 0; overflow: hidden; cursor: pointer; transition: background 0.15s; }
+.servicios .servicio:first-child { border-radius: 12px 12px 0 0; }
+.servicios .servicio:last-child { border-radius: 0 0 12px 12px; }
+.servicio:hover { background: var(--negro3); }
+.serv-top { display: flex; align-items: center; padding: 22px 28px; gap: 20px; }
+.serv-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 13px; color: var(--verde); min-width: 28px; letter-spacing: 0.05em; }
+.serv-mid { flex: 1; }
+.serv-nombre { font-size: 15px; font-weight: 600; color: var(--blanco); margin-bottom: 3px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.serv-tag { font-size: 12px; color: var(--gris2); }
+.serv-right { text-align: right; flex-shrink: 0; }
+.serv-precio { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; color: var(--blanco); }
+.serv-precio-sub { font-size: 11px; color: var(--gris3); margin-top: 1px; }
+.serv-arrow { color: var(--gris3); font-size: 20px; transition: transform 0.25s, color 0.15s; flex-shrink: 0; }
+.servicio.open .serv-arrow { transform: rotate(180deg); color: var(--verde); }
+.serv-body { display: none; padding: 0 28px 24px; border-top: 1px solid var(--borde); }
+.servicio.open .serv-body { display: block; }
+.serv-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; margin-bottom: 20px; }
+.sc { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; color: var(--gris2); line-height: 1.4; }
+.sc::before { content: '✓'; color: var(--verde); font-weight: 700; flex-shrink: 0; margin-top: 1px; font-size: 12px; }
+.chip { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 100px; letter-spacing: 0.04em; text-transform: uppercase; }
+.chip-verde { background: var(--verde-dim); color: var(--verde); border: 1px solid var(--borde-verde); }
+.chip-dorado { background: var(--dorado-dim); color: var(--dorado); border: 1px solid rgba(240,180,41,0.25); }
+.chip-gris { background: rgba(255,255,255,0.06); color: var(--gris2); border: 1px solid var(--borde); }
+.bio-card { background: var(--negro3); border: 1px solid var(--borde); border-radius: 16px; padding: 40px; margin-top: 40px; position: relative; overflow: hidden; }
+.bio-card::before { content: ''; position: absolute; top: -60px; right: -60px; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, rgba(0,229,160,0.06) 0%, transparent 70%); }
+.bio-head { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 24px; }
+.bio-ava { width: 72px; height: 72px; border-radius: 50%; background: var(--negro4); border: 2px solid var(--borde-verde); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px; color: var(--verde); flex-shrink: 0; }
+.bio-nombre { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px; color: var(--blanco); margin-bottom: 4px; }
+.bio-titulo { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--verde); }
+.bio-texto { font-size: 15px; color: var(--gris2); line-height: 1.75; margin-bottom: 24px; }
+.bio-stats { display: flex; gap: 32px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid var(--borde); }
+.bs-n { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 26px; color: var(--blanco); line-height: 1; margin-bottom: 3px; }
+.bs-n span { color: var(--verde); }
+.bs-l { font-size: 12px; color: var(--gris3); }
+.fe-bloque { background: rgba(240,180,41,0.05); border: 1px solid rgba(240,180,41,0.15); border-radius: 10px; padding: 24px 28px; margin-top: 20px; display: flex; gap: 16px; align-items: flex-start; }
+.fe-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+.fe-v { font-size: 15px; color: var(--gris1); font-style: italic; line-height: 1.6; margin-bottom: 4px; }
+.fe-r { font-size: 11px; color: var(--dorado); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.resultado-bloque { background: var(--negro3); border: 1px solid var(--borde); border-radius: 16px; padding: 36px 40px; margin-top: 40px; position: relative; overflow: hidden; }
+.resultado-bloque::after { content: ''; position: absolute; bottom: -40px; left: -40px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(0,229,160,0.05) 0%, transparent 70%); }
+.res-empresa { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gris3); margin-bottom: 6px; }
+.res-titulo { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 20px; color: var(--blanco); margin-bottom: 24px; }
+.res-nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; background: var(--borde); border-radius: 10px; overflow: hidden; margin-bottom: 20px; }
+.res-num-item { background: var(--negro4); padding: 22px 18px; border-right: 1px solid var(--borde); }
+.res-num-item:last-child { border-right: none; }
+.res-n { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 36px; color: var(--verde); line-height: 1; margin-bottom: 4px; }
+.res-l { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gris3); margin-bottom: 4px; }
+.res-d { font-size: 12px; color: var(--gris2); line-height: 1.4; }
+.res-nota { font-size: 13px; color: var(--gris2); font-style: italic; padding: 14px 18px; background: rgba(0,229,160,0.04); border-left: 2px solid var(--verde); border-radius: 0 6px 6px 0; }
+.proceso { display: flex; flex-direction: column; gap: 0; margin-top: 40px; }
+.paso { display: flex; gap: 20px; align-items: stretch; }
+.paso-linea { display: flex; flex-direction: column; align-items: center; width: 28px; flex-shrink: 0; }
+.paso-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--verde); flex-shrink: 0; margin-top: 5px; box-shadow: 0 0 10px var(--verde-glow); }
+.paso-bar { width: 1px; background: var(--borde); flex: 1; margin: 4px 0; }
+.paso:last-child .paso-bar { display: none; }
+.paso-body { flex: 1; padding-bottom: 32px; }
+.paso-titulo { font-size: 15px; font-weight: 600; color: var(--blanco); margin-bottom: 4px; }
+.paso-desc { font-size: 13px; color: var(--gris2); line-height: 1.6; }
+.cta-mid { background: var(--negro3); border: 1px solid var(--borde-verde); border-radius: 12px; padding: 36px 40px; text-align: center; margin: 56px 0 0; }
+.cta-mid-t { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 22px; color: var(--blanco); margin-bottom: 8px; line-height: 1.3; }
+.cta-mid-s { font-size: 14px; color: var(--gris2); margin-bottom: 24px; }
+.faq { display: flex; flex-direction: column; gap: 1px; margin-top: 40px; background: var(--borde); border-radius: 12px; overflow: hidden; }
+.faq-item { background: var(--negro2); cursor: pointer; }
+.faq-item:hover { background: var(--negro3); }
+.faq-q { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; gap: 16px; font-size: 15px; font-weight: 500; color: var(--blanco); }
+.faq-icon { color: var(--gris3); font-size: 20px; flex-shrink: 0; transition: transform 0.2s, color 0.15s; }
+.faq-item.open .faq-icon { transform: rotate(180deg); color: var(--verde); }
+.faq-a { display: none; padding: 16px 24px 20px; font-size: 14px; color: var(--gris2); line-height: 1.7; border-top: 1px solid var(--borde); }
+.faq-item.open .faq-a { display: block; }
+.cta-final { padding: 100px 28px; text-align: center; position: relative; overflow: hidden; }
+.cta-final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(0,229,160,0.06) 0%, transparent 70%); }
+.cta-final-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+.cta-final h2 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(32px, 5vw, 54px); color: var(--blanco); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 16px; }
+.cta-final h2 em { color: var(--verde); font-style: italic; }
+.cta-final p { font-size: 17px; color: var(--gris2); margin-bottom: 36px; line-height: 1.6; }
+.cta-nota { margin-top: 16px; font-size: 12px; color: var(--gris3); }
+.footer { background: var(--negro2); border-top: 1px solid var(--borde); padding: 28px; text-align: center; font-size: 12px; color: var(--gris3); line-height: 1.8; }
+.footer a { color: var(--verde); text-decoration: none; }
+.flotante { position: fixed; bottom: 24px; right: 24px; background: var(--verde); color: var(--negro); font-weight: 700; font-size: 14px; padding: 13px 22px; border-radius: 100px; text-decoration: none; z-index: 100; transition: all 0.2s; display: none; box-shadow: 0 4px 24px rgba(0,229,160,0.3); }
+.flotante:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,229,160,0.4); }
+.flotante.show { display: inline-flex; align-items: center; gap: 8px; }
+.rv { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.rv.in { opacity: 1; transform: translateY(0); }
+@media(max-width:600px) {
+  .hero-stats { flex-direction: column; }
+  .hero-stat { border-right: none; border-bottom: 1px solid var(--borde); }
+  .hero-stat:last-child { border-bottom: none; }
+  .res-nums { grid-template-columns: 1fr; }
+  .res-num-item { border-right: none; border-bottom: 1px solid var(--borde); }
+  .serv-checks { grid-template-columns: 1fr; }
+  .bio-card { padding: 24px; }
+  .bio-head { flex-direction: column; }
+  .cta-mid { padding: 28px 20px; }
+  .flotante { bottom: 16px; right: 16px; }
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-<div class="header">
-<div class="h-name">Lina Rachez</div>
-<div class="h-tag">Servicios digitales con propósito</div>
-<div class="h-divider"></div>
-<div class="h-row">📱 +57 311 433 3030</div>
-<div class="h-row">✉️ linahmgomez@gmail.com</div>
-<div class="h-row">🌎 Remoto · Colombia · EE.UU</div>
+
+<nav class="topbar">
+  <a href="#" class="topbar-logo">Lina<span>.</span>Rachez</a>
+  <a href="https://wa.me/573114333030?text=Hola%20Lina%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20saber%20m%C3%A1s" class="topbar-cta" target="_blank">Hablemos →</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-tag"><div class="hero-tag-dot"></div>Consultora Digital con IA · Disponible ahora</div>
+    <h1 class="display">Tu negocio<br><span class="verde">visible.</span><br>Tu dinero,<br><span class="dorado">con propósito.</span></h1>
+    <p class="hero-sub">Uso inteligencia artificial y estrategia real para que tu negocio aparezca, conecte y crezca — en Colombia y en cualquier país de habla hispana.</p>
+    <p class="hero-quote">"Viví 6 años en EE.UU. y volví con claridad: la tecnología es la herramienta. El propósito es lo que mueve todo."</p>
+    <div class="hero-btns">
+      <a href="#servicios" class="btn-primary">Ver servicios →</a>
+      <a href="https://wa.me/573114333030?text=Hola%20Lina%2C%20quiero%20saber%20c%C3%B3mo%20puedes%20ayudarme" class="btn-secondary" target="_blank">WhatsApp directo</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num"><span>565</span></div><div class="hero-stat-label">Vistas/mes en Google Maps sin publicidad</div></div>
+      <div class="hero-stat"><div class="hero-stat-num"><span>5.0</span> ★</div><div class="hero-stat-label">Calificación mantenida para un cliente real</div></div>
+      <div class="hero-stat"><div class="hero-stat-num"><span>48h</span></div><div class="hero-stat-label">Tiempo de entrega promedio</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="s">
+  <div class="c rv">
+    <div class="label">Para quién</div>
+    <h2 class="h2">Trabajo con negocios que quieren<br><em>más que solo existir online.</em></h2>
+    <div class="para-grid">
+      <div class="para-item"><div class="para-num">01</div><div class="para-titulo">Negocios locales</div><div class="para-desc">Restaurantes, tiendas, clínicas, servicios — que quieren que sus clientes los encuentren en Google antes que a la competencia.</div></div>
+      <div class="para-item"><div class="para-num">02</div><div class="para-titulo">Emprendedores digitales</div><div class="para-desc">Coaches, consultores, creadores — que necesitan contenido profesional con IA sin pagar una agencia enorme.</div></div>
+      <div class="para-item"><div class="para-num">03</div><div class="para-titulo">Familias y personas</div><div class="para-desc">Que quieren organizar sus finanzas con principios sólidos y construir algo estable en tiempos que lo piden.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="s-dark" id="servicios">
+  <div class="c rv">
+    <div class="label">Servicios</div>
+    <h2 class="h2">Todo lo que necesitas.<br><em>Un solo lugar.</em></h2>
+    <p class="h2-sub" style="margin-bottom:0;">Haz clic en cada servicio para ver qué incluye exactamente.</p>
+    <div class="servicios">
+
+      <div class="servicio" onclick="tog(this)">
+        <div class="serv-top">
+          <div class="serv-num">01</div>
+          <div class="serv-mid"><div class="serv-nombre">Auditoría de presencia digital <span class="chip chip-dorado">Más pedido</span></div><div class="serv-tag">Sé exactamente por qué tus clientes no te encuentran</div></div>
+          <div class="serv-right"><div class="serv-precio">$75 USD</div><div class="serv-precio-sub">Pago único · 48h</div></div>
+          <div class="serv-arrow">⌄</div>
+        </div>
+        <div class="serv-body">
+          <div class="serv-checks">
+            <div class="sc">Google Maps auditado al detalle</div><div class="sc">Análisis completo de redes sociales</div>
+            <div class="sc">Revisión de sitio web o tienda</div><div class="sc">Reputación online y reseñas</div>
+            <div class="sc">Reporte PDF con prioridades claras</div><div class="sc">Sesión 30 min para resolver dudas</div>
+          </div>
+          <a href="https://wa.me/573114333030?text=Hola%20Lina%2C%20quiero%20la%20auditor%C3%ADa%20de%20presencia%20digital%20por%20%2475%20USD" class="btn-primary" style="font-size:13px;padding:11px 22px;" target="_blank">Quiero esta auditoría →</a>
+        </div>
+      </div>
+
+      <div class="servicio" onclick="tog(this)">
+        <div class="serv-top">
+          <div class="serv-num">02</div>
+          <div class="serv-mid"><div class="serv-nombre">Google Maps + presencia digital <span class="chip chip-verde">Resultados rápidos</span></div><div class="serv-tag">Aparece antes que tu competencia en búsquedas locales</div></div>
+          <div class="serv-right"><div class="serv-precio">Desde $120 USD</div><div class="serv-precio-sub">Pago único</div></div>
+          <div class="serv-arrow">⌄</div>
+        </div>
+        <div class="serv-body">
+          <div class="serv-checks">
+            <div class="sc">Perfil Google Maps optimizado al 100%</div><div class="sc">Fotos, categorías y palabras clave</div>
+            <div class="sc">Estrategia para conseguir reseñas</div><div class="sc">Catálogo digital de productos</div>
+            <div class="sc">Guía de mantenimiento incluida</div><div class="sc">Seguimiento a 30 días</div>
+          </div>
+          <a href="https://wa.me/573114333030?text=Hola%20Lina%2C%20quiero%20mejorar%20mi%20presencia%20en%20Google%20Maps" class="btn-primary" style="font-size:13px;padding:11px 22px;" target="_blank">Quiero más visibilidad →</a>
+        </div>
+      </div>
+
+      <div class="servicio" onclick="tog(this)">
+        <div class="serv-top">
+          <div class="serv-num">03</div>
+          <div class="serv-mid"><div class="serv-nombre">Videos con IA <span class="chip chip-verde">IA</span></div><div class="serv-tag">Contenido profesional sin cámara, sin estudio, en 48h</div></div>
+          <div class="serv-right"><div class="serv-precio">Desde $80 USD</div><div class="serv-precio-sub">Por video · o pack</div></div>
+          <div class="serv-arrow">⌄</div>
+        </div>
+        <div class="serv-body">
+          <div class="serv-checks">
+            <div class="sc">Reels y videos para Instagram y TikTok</div><div class="sc">Videos corporativos con avatar IA</div>
+            <div class="sc">Guion escrito incluido</div><div class="sc">Voz en off en español natural</div>
+            <div class="sc">Subtítulos y edición completa</div><div class="sc">Pack mensual 8 videos — $500 USD</div>
+          </div>
+          <a href="https://wa.me/573114333030?text=Hola%20Lina%2C%20quiero%20videos%20con%20IA%20para%20mi%20negocio" class="btn-primary" style="font-size:13px;padding:11px 22px;" target="_blank">Quiero videos con IA →</a>
+        </div>
+      </div>
+
+      <div class="servicio" onclick="tog(this)">
+        <div class="serv-top">
+          <div class="serv-num">04</div>
+          <div class="serv-mid"><div class="serv-nombre">Redes sociales y contenido</div><div class="serv-tag">Publicaciones que conectan de verdad con tu audiencia</div></div>
+          <div class="serv-right"><div class="serv-precio">Desde $150 USD</div><div class="serv-precio-sub">Mensual</div></div>
+          <div class="serv-arrow">⌄</div>
+        </div>
+        <div class="serv-body">
+          <div class="serv-checks">
+            <div class="sc">8–12 publicaciones diseñadas al mes</div><div class="sc">Calendario de contenido mensual</div>
+            <div class="sc">Captions y hashtags estratégicos</div><div class="sc">Programación automática incluida</div>
+            <div class="sc">Reporte mensual de resultados</div><div class="sc">1 reel o video IA por mes incluido</div>
+          </div>
+          <a href="https://wa.me/573114333030?text=Hola%20Lina%2C%20quiero%20el%20servicio%20de%20redes%20sociales" class="btn-primary" style="font-size:13px;padding:11px 22px;" target="_blank">Quiero gestión de redes →</a>
+        </div>
+      </div>
+
+      <div class="servicio" onclick="tog(this)">
+        <div class="serv-top">
+          <div class="serv-num">05</div>
+          <div class="serv-mid"><div class="serv-nombre">Finanzas con propósito <span class="chip chip-gris">Próximamente</span></div><div class="serv-tag">Administra lo que Dios te confió — planner + guía práctica</div></div>
+          <div class="serv-right"><div class="serv-precio">Lista de espera</div><div class="serv-precio-sub">Gratuita</div></div>
+          <div class="serv-arrow">⌄</div>
+        </div>
+        <div class="serv-body">
+          <div class="serv-checks">
+            <div class="sc">Planner digital interactivo</div><div class="sc">Principios bíblicos de mayordomía</div>
+            <div class="sc">Inversión en USD · S&P 500</div><div class="sc">Para familias y emprendedores</div>
+            <div class="sc">Precio especial primeros inscritos</div><div class="sc">Colombia · cualquier país hispanohablante</div>
+          </div>
+          <a href="https://wa.me/573114333030?text=Hola%20Lina%2C%20quiero%20anotarme%20en%20lista%20de%20espera%20de%20finanzas%20con%20prop%C3%B3sito" class="btn-primary" style="font-size:13px;padding:11px 22px;" target="_blank">Anotarme en lista de espera →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="c">
+  <div class="cta-mid rv">
+    <div class="cta-mid-t">¿No sabes por cuál empezar?</div>
+    <div class="cta-mid-s">Cuéntame de tu negocio y te oriento sin costo — en menos de 2 horas.</div>
+    <a href="https://wa.me/573114333030?text=Hola%20Lina%2C%20no%20s%C3%A9%20qu%C3%A9%20servicio%20necesito%2C%20%C2%BFme%20puedes%20orientar%3F" class="btn-primary" target="_blank">Orientarme gratis →</a>
+  </div>
 </div>
-<div class="section-label">Casos de trabajo real</div>
-<div class="case-card">
-<div class="case-top">
-<div class="case-client">Colchones Confort Jireh — Google Maps</div>
-<div class="case-service">Optimización de perfil + reseñas + fotos</div>
-</div>
-<div class="case-body">
-<div class="metrics">
-<div class="metric"><div class="mv">5.0 ⭐</div><div class="ml">Calificación</div></div>
-<div class="metric"><div class="mv">16</div><div class="ml">Reseñas</div></div>
-<div class="metric"><div class="mv">565</div><div class="ml">Vistas/mes</div></div>
-</div>
-<div class="work-list">
-<div class="work-item">✓ 265 interacciones y 50 búsquedas mensuales orgánicas</div>
-<div class="work-item">✓ Fotos activas, datos completos y reseñas gestionadas</div>
-<div class="work-item">✓ Calificación perfecta 5.0 mantenida</div>
-</div>
-</div>
-</div>
-<div class="case-card">
-<div class="case-top3">
-<div class="case-client">Colchones Confort Jireh — Tienda web</div>
-<div class="case-service3">Página web + catálogo + pasarela de pago</div>
-</div>
-<div class="case-body">
-<div class="metrics">
-<div class="metric3"><div class="mv3">6</div><div class="ml3">Categorías</div></div>
-<div class="metric3"><div class="mv3">✓</div><div class="ml3">Pagos online</div></div>
-<div class="metric3"><div class="mv3">✓</div><div class="ml3">Envío gratis</div></div>
-</div>
-<div class="work-list">
-<div class="work-item">✓ Tienda online completa en Tiendanube</div>
-<div class="work-item">✓ Catálogo con colchones, bases, cabeceros y más</div>
-<div class="work-item">✓ Mercado Pago, Nequi, Daviplata y Bancolombia integrados</div>
-<div class="work-item">✓ Instagram, Facebook, TikTok y YouTube vinculados</div>
-</div>
-</div>
-</div>
-<div class="case-card">
-<div class="case-top2">
-<div class="case-client">Kéfir Glow</div>
-<div class="case-service2">Marca + Tienda online + Identidad digital</div>
-</div>
-<div class="case-body">
-<div class="metrics">
-<div class="metric2"><div class="mv">✓</div><div class="ml2">Marca creada</div></div>
-<div class="metric2"><div class="mv">✓</div><div class="ml2">Tienda activa</div></div>
-<div class="metric2"><div class="mv">✓</div><div class="ml2">Pagos integrados</div></div>
-</div>
-<div class="work-list">
-<div class="work-item">✓ Creación de marca desde cero: nombre, logo, identidad</div>
-<div class="work-item">✓ Tienda online con productos, guía de uso y políticas</div>
-<div class="work-item">✓ Cosmética artesanal a base de kéfir — nicho diferenciado</div>
-<div class="work-item">✓ Pasarela de pago integrada (Nequi, Daviplata, NU)</div>
-</div>
-</div>
-</div>
-<div class="section-label">Servicios y precios</div>
-<div class="offer-card">
-<div class="offer-title">¿Qué puedo hacer por tu negocio?</div>
-<div class="svc-list">
-<div class="svc"><div><div class="svc-name">🗺️ Google Maps optimizado</div><div class="svc-desc">Perfil completo + reseñas + fotos + palabras clave</div></div><div class="svc-right"><span class="svc-price">$150k</span><span class="svc-time">Pago único · 24h</span></div></div>
-<div class="svc"><div><div class="svc-name">🛍️ Catálogo digital</div><div class="svc-desc">Hasta 10 productos con fotos y precios en Canva</div></div><div class="svc-right"><span class="svc-price">$150k</span><span class="svc-time">Pago único · 24h</span></div></div>
-<div class="svc"><div><div class="svc-name">📸 Feed de Instagram</div><div class="svc-desc">9–12 publicaciones diseñadas listas para publicar</div></div><div class="svc-right"><span class="svc-price">$200k</span><span class="svc-time">Pago único · 48h</span></div></div>
-<div class="svc"><div><div class="svc-name">📊 Presencia digital completa</div><div class="svc-desc">Google Maps + fotos + catálogo + 1 red social</div></div><div class="svc-right"><span class="svc-price">$300k</span><span class="svc-time">Pago único · 48h</span></div></div>
-<div class="svc"><div><div class="svc-name">📱 Manejo de redes sociales</div><div class="svc-desc">8 posts al mes diseñados y programados</div></div><div class="svc-right"><span class="svc-price">$300k</span><span class="svc-time">Mensual</span></div></div>
-<div class="svc"><div><div class="svc-name">🌐 Página web básica</div><div class="svc-desc">Hasta 5 secciones con productos y pagos integrados</div></div><div class="svc-right"><span class="svc-price">$400k</span><span class="svc-time">Pago único · 72h</span></div></div>
-<div class="svc"><div><div class="svc-name">🤖 Automatización WhatsApp</div><div class="svc-desc">Respuestas automáticas + agendamiento + menú</div></div><div class="svc-right"><span class="svc-price">$500k</span><span class="svc-time">Setup · +$200k/mes</span></div></div>
-</div>
-<div class="offer-divider"></div>
-<div class="pay-row">
-<div class="pay-pill">🏦 Bancolombia</div>
-<div class="pay-pill">💳 NU</div>
-<div class="pay-pill">💵 Efectivo</div>
-</div>
-</div>
-<div class="section-label">Condiciones de trabajo</div>
-<div class="terms-card">
-<div class="terms-top">
-<div class="terms-title">Así trabajamos juntos</div>
-<div class="terms-sub">Para que todo sea claro desde el inicio</div>
-</div>
-<div class="term-row"><div class="term-num">1</div><div><div class="term-text">Confirmación por escrito antes de empezar</div><div class="term-sub-text">Acuerdo del servicio, valor y forma de pago vía WhatsApp.</div></div></div>
-<div class="term-row"><div class="term-num">2</div><div><div class="term-text">Pago antes de iniciar el trabajo</div><div class="term-sub-text">Servicios hasta $200k: pago completo al inicio. Desde $300k: 50% al inicio, 50% al entregar.</div></div></div>
-<div class="term-row"><div class="term-num">3</div><div><div class="term-text">Accesos y entregables al recibir el saldo</div><div class="term-sub-text">Claves y archivos finales se entregan cuando el pago está completo.</div></div></div>
-<div class="term-row"><div class="term-num">4</div><div><div class="term-text">Sin devoluciones una vez iniciado el trabajo</div><div class="term-sub-text">El tiempo invertido tiene valor. El pago adelantado no se reembolsa.</div></div></div>
-<div class="confirm-box">
-<div class="confirm-label">Mensaje de confirmación antes de empezar</div>
-<div class="confirm-text">"Hola [nombre], confirmo el servicio de [X] por $[X]. Pago: [contado / 50% hoy y 50% al entregar]. Una vez reciba el pago iniciamos. ¿Confirmas?"</div>
-</div>
-</div>
-<div class="cta">
-<div class="cta-text">¿Quieres que más personas encuentren tu negocio en Google y lleguen solos a tu WhatsApp?</div>
-<a href="https://wa.me/573114333030" class="cta-btn"><span>📱 Escríbeme por WhatsApp</span></a>
-<div class="schema">Respondo en menos de 2 horas · Bogotá, Colombia</div>
-</div>
-</div>
+
+<section class="s-alt">
+  <div class="c rv">
+    <div class="label">Quién está detrás</div>
+    <h2 class="h2">No soy una agencia.<br><em>Soy una historia.</em></h2>
+    <div class="bio-card">
+      <div class="bio-head">
+        <div class="bio-ava">LR</div>
+        <div><div class="bio-nombre">Lina Rachez</div><div class="bio-titulo">Consultora Digital con IA · Bogotá, Colombia</div></div>
+      </div>
+      <p class="bio-texto">
+        En 2019 llegué a Estados Unidos con esperanza. Lo que encontré al principio fue otra cosa: jornadas largas en fábricas, restaurantes, delivery. Cambiaba tiempo por dinero — y en el fondo había una ansiedad constante que no lograba explicarme.<br><br>
+        Hoy lo entiendo: era Dios inquietándome. Recordándome que había sido creada con propósito. Que no había sido llamada a cumplir un horario, pagar deudas y permanecer en escasez permanente.<br><br>
+        Siempre fui autodidacta — aprendía sola, exploraba sola. Pero no tenía un enfoque claro, en parte porque tampoco quería perder mi propósito de fe en medio de todo. Intenté empezar muchas veces en mis propias fuerzas. Las puertas se cerraban. El entorno pesaba. Y con el tiempo entendí por qué: estaba construyendo sin el fundamento correcto.<br><br>
+        Esos 6 años me enfrentaron a versiones de mí misma que no conocía y a una verdad que terminó siendo el centro de todo: que la forma en que administras lo que tienes — tu tiempo, tu dinero, tus talentos — define lo que viene después. No es un principio financiero. Es un principio de vida. Y tiene nombre: <strong style="color:#FFFFFF;">mayordomía</strong>.<br><br>
+        Cuando regresé a Colombia hace 7 meses, volví con herramientas reales, con fe probada en momentos difíciles y con las ganas de ayudar a negocios y personas a crecer de manera inteligente — usando inteligencia artificial, estrategia digital y la certeza de que el dinero es un recurso que Dios nos confía, no un fin en sí mismo.<br><br>
+        Hoy soy <strong style="color:#FFFFFF;">mayordomía en acción</strong>. No solo lo predico — lo practico. Y eso es exactamente lo que te ofrezco.
+      </p>
+      <div class="fe-bloque" style="margin-bottom:12px;"><div class="fe-icon">✦</div><div><div class="fe-v">"El que es fiel en lo muy poco, también en lo más es fiel."</div><div class="fe-r">Lucas 16:10</div></div></div>
+      <div class="fe-bloque" style="margin-bottom:12px;"><div class="fe-icon">✦</div><div><div class="fe-v">"Porque yo sé los planes que tengo para vosotros — planes de bienestar y no de calamidad, para daros un futuro y una esperanza."</div><div class="fe-r">Jeremías 29:11</div></div></div>
+      <div class="fe-bloque"><div class="fe-icon">✦</div><div><div class="fe-v">"Todo lo que te viniere a la mano para hacer, hazlo según tus fuerzas."</div><div class="fe-r">Eclesiastés 9:10</div></div></div>
+      <div class="bio-stats">
+        <div><div class="bs-n"><span>6</span> años</div><div class="bs-l">Experiencia EE.UU.</div></div>
+        <div><div class="bs-n"><span>65K</span></div><div class="bs-l">Vistas en TikTok desde cero</div></div>
+        <div><div class="bs-n"><span>3</span> países</div><div class="bs-l">Colombia · México · España</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s">
+  <div class="c rv">
+    <div class="label">Resultados reales — no promesas</div>
+    <h2 class="h2">Números que<br><em>hablan solos.</em></h2>
+    <div class="resultado-bloque" style="margin-bottom:16px;">
+      <div class="res-empresa">Caso de éxito · Bogotá, Colombia</div>
+      <div class="res-titulo">Colchones Confort Jireh — presencia digital optimizada</div>
+      <div class="res-nums">
+        <div class="res-num-item"><div class="res-n">565</div><div class="res-l">Vistas / mes</div><div class="res-d">Google Maps sin publicidad pagada</div></div>
+        <div class="res-num-item"><div class="res-n">5.0</div><div class="res-l">Calificación</div><div class="res-d">16 reseñas gestionadas y mantenidas</div></div>
+        <div class="res-num-item"><div class="res-n">265</div><div class="res-l">Interacciones</div><div class="res-d">Clics, llamadas y rutas al mes</div></div>
+      </div>
+      <div class="res-nota">Esto es lo que pasa cuando tu perfil digital está optimizado correctamente. No magia — mayordomía digital.</div>
+    </div>
+    <div class="resultado-bloque">
+      <div class="res-empresa">Contenido propio · TikTok desde cero</div>
+      <div class="res-titulo">Dos cuentas construidas desde cero — sin seguidores, sin base</div>
+      <div class="res-nums">
+        <div class="res-num-item"><div class="res-n">65K</div><div class="res-l">Vistas · 1 video</div><div class="res-d">Una sola publicación desde cuenta nueva</div></div>
+        <div class="res-num-item"><div class="res-n">10K</div><div class="res-l">Vistas · otro video</div><div class="res-d">Segunda cuenta, también desde cero</div></div>
+        <div class="res-num-item"><div class="res-n">$0</div><div class="res-l">Inversión en ads</div><div class="res-d">100% crecimiento orgánico, sin pagar</div></div>
+      </div>
+      <div class="res-nota">Si logro eso con mis propias cuentas desde cero — imagina lo que puedo hacer con la tuya.</div>
+    </div>
+  </div>
+</section>
+
+<section class="s-dark">
+  <div class="c rv">
+    <div class="label">Cómo trabajo</div>
+    <h2 class="h2">Simple. Rápido.<br><em>Sin sorpresas.</em></h2>
+    <div class="proceso">
+      <div class="paso"><div class="paso-linea"><div class="paso-dot"></div><div class="paso-bar"></div></div><div class="paso-body"><div class="paso-titulo">Me escribes por WhatsApp</div><div class="paso-desc">Cuéntame de tu negocio y qué necesitas. Respondo en menos de 2 horas y definimos qué servicio se ajusta mejor a tu situación real.</div></div></div>
+      <div class="paso"><div class="paso-linea"><div class="paso-dot"></div><div class="paso-bar"></div></div><div class="paso-body"><div class="paso-titulo">Acordamos y confirmamos</div><div class="paso-desc">Acuerdo por escrito del servicio, precio y plazo. Pago por Bancolombia, Nequi, Daviplata o transferencia internacional. Empiezo al confirmar.</div></div></div>
+      <div class="paso"><div class="paso-linea"><div class="paso-dot"></div><div class="paso-bar"></div></div><div class="paso-body"><div class="paso-titulo">Entrego con métricas</div><div class="paso-desc">Cada entrega incluye resultados medibles. No solo "está listo" — te digo qué cambió y qué esperar en las próximas semanas.</div></div></div>
+      <div class="paso"><div class="paso-linea"><div class="paso-dot"></div></div><div class="paso-body"><div class="paso-titulo">Seguimiento real</div><div class="paso-desc">No desaparezco después de entregar. Hago seguimiento a 30 días para confirmar que los resultados se sostienen.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="s">
+  <div class="c-sm rv">
+    <div class="label">Preguntas frecuentes</div>
+    <h2 class="h2" style="margin-bottom:8px;">Lo que más<br><em>me preguntan.</em></h2>
+    <div class="faq">
+      <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">¿Por qué los precios están en dólares si estás en Colombia? <span class="faq-icon">⌄</span></div><div class="faq-a">Trabajo con clientes en Colombia, México, España y cualquier país hispanohablante. Los precios en USD garantizan el mismo valor para todos. Para clientes colombianos siempre doy el equivalente en pesos al momento del pago.</div></div>
+      <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">¿Qué pasa si no veo resultados? <span class="faq-icon">⌄</span></div><div class="faq-a">En la auditoría de presencia digital garantizo encontrar mínimo 5 oportunidades de mejora concretas. Si no las encuentro, te devuelvo el dinero. Para los demás servicios, establecemos métricas claras antes de empezar.</div></div>
+      <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">¿Puedo contratar varios servicios a la vez? <span class="faq-icon">⌄</span></div><div class="faq-a">Sí, y muchos clientes lo hacen. Cuando se contratan dos o más servicios juntos hay descuento. Cuéntame qué necesitas y armamos un paquete a tu medida.</div></div>
+      <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">¿Lo de finanzas bíblicas es solo para cristianos? <span class="faq-icon">⌄</span></div><div class="faq-a">No excluyo a nadie — y tampoco le bajo el volumen a lo que creo. Este servicio nace de mi fe y de lo que viví: que cuando administras bien lo que tienes, algo más grande se mueve. Si llegas buscando orden en tus finanzas, bienvenido. Si en el camino encuentras algo más — mejor todavía. No vengo a obligar a nadie, pero sí vengo a compartir con honestidad lo que a mí me cambió la vida.</div></div>
+      <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">¿Cuántos clientes atiendes al mes? <span class="faq-icon">⌄</span></div><div class="faq-a">Manejo cupos limitados por mes para garantizar atención personalizada y resultados reales. No soy una agencia masiva — soy una consultora que conoce tu negocio. Si hay disponibilidad cuando lees esto, es el momento de escribirme.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="cta-final-inner rv">
+    <h2 class="display">¿Lista para que<br>tu negocio sea<br><em>encontrado?</em></h2>
+    <p>No necesitas una agencia enorme ni un presupuesto millonario. Necesitas la estrategia correcta y alguien que te acompañe de verdad.</p>
+    <a href="https://wa.me/573114333030?text=Hola%20Lina%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20empezar" class="btn-primary" style="font-size:16px;padding:18px 40px;" target="_blank">Hablemos ahora →</a>
+    <p class="cta-nota">Respondo en menos de 2 horas · Bogotá, Colombia · linahmgomez@gmail.com</p>
+  </div>
+</section>
+
+<footer class="footer">
+  © 2026 Lina Rachez · Consultora Digital con IA · Bogotá, Colombia<br>
+  <a href="mailto:linahmgomez@gmail.com">linahmgomez@gmail.com</a> · Colombia · México · España
+</footer>
+
+<a href="https://wa.me/573114333030?text=Hola%20Lina%2C%20vi%20tu%20p%C3%A1gina" class="flotante" id="fl" target="_blank">WhatsApp →</a>
+
+<script>
+function tog(el) {
+  const open = el.classList.contains('open');
+  document.querySelectorAll('.servicio').forEach(s => s.classList.remove('open'));
+  if (!open) el.classList.add('open');
+}
+const fl = document.getElementById('fl');
+const hero = document.querySelector('.hero');
+window.addEventListener('scroll', () => {
+  fl.classList.toggle('show', hero.getBoundingClientRect().bottom < 0);
+});
+const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('in'); }), {threshold: 0.1});
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
 </body>
 </html>
