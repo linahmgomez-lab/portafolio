@@ -167,6 +167,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
 .flotante.show{display:inline-flex;align-items:center;gap:8px}
 .rv{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease}
 .rv.in{opacity:1;transform:translateY(0)}
+.video-wrap{position:relative;border-radius:12px;overflow:hidden;background:#000}
+.video-wrap video{width:100%;display:block;border-radius:12px}
 @media(max-width:600px){.hero-stats{flex-direction:column}.hero-stat{border-right:none;border-bottom:1px solid var(--borde)}.hero-stat:last-child{border-bottom:none}.res-nums{grid-template-columns:1fr}.res-num-item{border-right:none;border-bottom:1px solid var(--borde)}.serv-checks{grid-template-columns:1fr}.bio-card{padding:24px}.bio-head{flex-direction:column}.cta-mid{padding:28px 20px}.flotante{bottom:16px;right:16px}}
 </style>
 </head>
@@ -385,8 +387,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
       <div class="fe-bloque" style="margin-bottom:12px;"><div class="fe-icon">✦</div><div><div class="fe-v">"El que es fiel en lo muy poco, también en lo más es fiel."</div><div class="fe-r">Lucas 16:10</div></div></div>
       <div class="fe-bloque" style="margin-bottom:12px;"><div class="fe-icon">✦</div><div><div class="fe-v">"Porque yo sé los planes que tengo para vosotros — planes de bienestar y no de calamidad, para daros un futuro y una esperanza."</div><div class="fe-r">Jeremías 29:11</div></div></div>
       <div class="fe-bloque"><div class="fe-icon">✦</div><div><div class="fe-v">"Todo lo que te viniere a la mano para hacer, hazlo según tus fuerzas."</div><div class="fe-r">Eclesiastés 9:10</div></div></div>
-      <div style="margin-top:24px;border-radius:12px;overflow:hidden;position:relative;padding-bottom:56.25%;height:0;">
-        <iframe src="https://www.youtube.com/embed/iwAR07dYsWs?controls=0&rel=0&modestbranding=1&showinfo=0" title="Lina Rachez — Consultora Digital con IA" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;"></iframe>
+      <div class="video-wrap" style="margin-top:24px;">
+        <video controls playsinline poster="">
+          <source src="https://raw.githubusercontent.com/linahmgomez-lab/portafolio/main/copy_9750A8A2-215E-4334-93AD-75F3D42C9149%20(1).mov" type="video/mp4">
+        </video>
       </div>
       <div class="bio-stats">
         <div><div class="bs-n"><span>6</span> años</div><div class="bs-l">Experiencia EE.UU.</div></div>
@@ -426,20 +430,26 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
       <div class="res-titulo">Así queda tu negocio — ejemplos generados con IA</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:20px;margin-bottom:16px;">
         <div style="background:var(--negro4);border:1px solid var(--borde);border-radius:10px;overflow:hidden;">
-          <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-            <iframe src="https://www.youtube.com/embed/c-F84bTLPdw?controls=0&rel=0&modestbranding=1&showinfo=0" title="Spa y Estética" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+          <div class="video-wrap">
+            <video controls playsinline>
+              <source src="https://raw.githubusercontent.com/linahmgomez-lab/portafolio/main/Elegant_spa_treatment_room_sof_Kling_26_Pro_12204.mp4" type="video/mp4">
+            </video>
           </div>
           <div style="padding:12px 16px;"><div style="font-size:13px;font-weight:600;color:var(--verde);margin-bottom:3px;">🌿 SPA & ESTÉTICA</div><div style="font-size:11px;color:var(--gris2);line-height:1.5;">Ambiente, tratamientos y lujo — generado con Kling AI · Video de muestra</div></div>
         </div>
         <div style="background:var(--negro4);border:1px solid var(--borde);border-radius:10px;overflow:hidden;">
-          <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-            <iframe src="https://www.youtube.com/embed/EFjV3JDHScA?controls=0&rel=0&modestbranding=1&showinfo=0" title="Clínica y Salud" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+          <div class="video-wrap">
+            <video controls playsinline>
+              <source src="https://raw.githubusercontent.com/linahmgomez-lab/portafolio/main/Modern_dental_clinic_bright_cl_Kling_26_Pro_63279.mp4" type="video/mp4">
+            </video>
           </div>
           <div style="padding:12px 16px;"><div style="font-size:13px;font-weight:600;color:var(--verde);margin-bottom:3px;">🦷 CLÍNICA & SALUD</div><div style="font-size:11px;color:var(--gris2);line-height:1.5;">Confianza, modernidad y profesionalismo — generado con Kling AI · Video de muestra</div></div>
         </div>
         <div style="background:var(--negro4);border:1px solid var(--borde);border-radius:10px;overflow:hidden;">
-          <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-            <iframe src="https://www.youtube.com/embed/32RN0TCY424?controls=0&rel=0&modestbranding=1&showinfo=0" title="Restaurante" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+          <div class="video-wrap">
+            <video controls playsinline>
+              <source src="https://raw.githubusercontent.com/linahmgomez-lab/portafolio/main/Upscale_Colombian_restaurant_c_Kling_26_Pro_25173.mp4" type="video/mp4">
+            </video>
           </div>
           <div style="padding:12px 16px;"><div style="font-size:13px;font-weight:600;color:var(--dorado);margin-bottom:3px;">🍽 RESTAURANTE & COMIDA</div><div style="font-size:11px;color:var(--gris2);line-height:1.5;">Gastronomía, ambiente y experiencia — generado con Kling AI · Video de muestra</div></div>
         </div>
