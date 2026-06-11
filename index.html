@@ -41,6 +41,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
 .hero-stat-num{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;color:var(--blanco);line-height:1;margin-bottom:4px}
 .hero-stat-num span{color:var(--verde)}
 .hero-stat-label{font-size:11px;color:var(--gris3);line-height:1.3}
+.cupos-banner{background:linear-gradient(135deg,rgba(240,180,41,0.1),rgba(240,180,41,0.05));border:1px solid rgba(240,180,41,0.3);border-radius:10px;padding:14px 20px;margin-bottom:32px;display:flex;align-items:center;gap:12px}
+.cupos-dot{width:8px;height:8px;border-radius:50%;background:var(--dorado);animation:pulse 1.5s infinite;flex-shrink:0}
+.cupos-txt{font-size:13px;color:var(--dorado);font-weight:600}
 .s{padding:88px 0}
 .s-dark{background:var(--negro2);padding:88px 0;border-top:1px solid var(--borde);border-bottom:1px solid var(--borde)}
 .s-alt{background:var(--negro3);padding:88px 0}
@@ -79,6 +82,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
 .chip-dorado{background:var(--dorado-dim);color:var(--dorado);border:1px solid rgba(240,180,41,0.25)}
 .chip-gris{background:rgba(255,255,255,0.06);color:var(--gris2);border:1px solid var(--borde)}
 .pago-chip{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,0.05);border:1px solid var(--borde);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--gris2);font-weight:500}
+.terminos{background:rgba(0,229,160,0.04);border:1px solid var(--borde-verde);border-radius:10px;padding:16px 20px;margin-top:32px;font-size:12px;color:var(--gris2);line-height:1.7}
+.terminos strong{color:var(--blanco);display:block;margin-bottom:6px;font-size:13px}
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:200;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)}
 .modal-overlay.show{display:flex}
 .modal{background:var(--negro3);border:1px solid var(--borde-verde);border-radius:16px;padding:32px 28px;max-width:480px;width:100%;position:relative;animation:slideUp 0.3s ease;max-height:90vh;overflow-y:auto}
@@ -172,10 +177,12 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
 </style>
 </head>
 <body>
+
 <nav class="topbar">
   <a href="#" class="topbar-logo">Lina<span>.</span>Rachez</a>
   <a href="https://wa.me/573114333030?text=Hola%20Lina%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20saber%20m%C3%A1s" class="topbar-cta" target="_blank">Hablemos →</a>
 </nav>
+
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
@@ -184,6 +191,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
     <h1 class="display">Tu negocio<br><span class="verde">visible.</span><br>Tu dinero,<br><span class="dorado">con propósito.</span></h1>
     <p class="hero-sub">Uso inteligencia artificial y estrategia real para que tu negocio aparezca, conecte y crezca — en Colombia y en cualquier país de habla hispana.</p>
     <p class="hero-quote">"Viví 6 años en EE.UU. y volví con claridad: la tecnología es la herramienta. El propósito es lo que mueve todo."</p>
+    <div class="cupos-banner">
+      <div class="cupos-dot"></div>
+      <div class="cupos-txt">Solo 5 cupos disponibles este mes — 2 ya tomados</div>
+    </div>
     <div class="hero-btns">
       <a href="#servicios" class="btn-primary">Ver servicios →</a>
       <a href="https://wa.me/573114333030?text=Hola%20Lina%2C%20quiero%20saber%20c%C3%B3mo%20puedes%20ayudarme" class="btn-secondary" target="_blank">WhatsApp directo</a>
@@ -195,6 +206,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
     </div>
   </div>
 </section>
+
 <section class="s">
   <div class="c rv">
     <div class="label">Para quién</div>
@@ -206,6 +218,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
     </div>
   </div>
 </section>
+
 <section class="s-dark" id="servicios">
   <div class="c rv">
     <div class="label">Servicios</div>
@@ -300,8 +313,18 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
         </div>
       </div>
     </div>
+
+    <div class="terminos">
+      <strong>Términos y condiciones de trabajo</strong>
+      · Al confirmar el servicio por WhatsApp aceptas estos términos.<br>
+      · Servicios hasta $200 USD: pago 100% antes de iniciar.<br>
+      · Servicios desde $200 USD: 50% para iniciar · 50% contra entrega.<br>
+      · El trabajo ya realizado no es reembolsable bajo ninguna circunstancia.<br>
+      · El tiempo invertido en estrategia, diseño o producción se cobra aunque el proyecto no continúe.
+    </div>
   </div>
 </section>
+
 <div class="c">
   <div class="cta-mid rv">
     <div class="cta-mid-t">¿No sabes por cuál empezar?</div>
@@ -309,6 +332,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
     <button class="btn-primary" style="border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;" onclick="abrirModal('Orientación gratuita','Sin costo',null)">Orientarme gratis →</button>
   </div>
 </div>
+
 <div class="modal-overlay" id="modalOverlay" onclick="cerrarModalFuera(event)">
   <div class="modal" id="modal">
     <button class="modal-close" onclick="cerrarModal()">✕</button>
@@ -326,7 +350,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
           <label class="form-opcion" onclick="selOpc(this,'pais')"><input type="radio" name="pais" value="Colombia"><div class="form-opcion-dot"></div><span class="form-opcion-txt">🇨🇴 Colombia</span></label>
           <label class="form-opcion" onclick="selOpc(this,'pais')"><input type="radio" name="pais" value="México"><div class="form-opcion-dot"></div><span class="form-opcion-txt">🇲🇽 México</span></label>
           <label class="form-opcion" onclick="selOpc(this,'pais')"><input type="radio" name="pais" value="España"><div class="form-opcion-dot"></div><span class="form-opcion-txt">🇪🇸 España</span></label>
-          <label class="form-opcion" onclick="selOpc(this,'pais')"><input type="radio" name="pais" value="USA/Otro"><div class="form-opcion-dot"></div><span class="form-opcion-txt">🌎 USA / Otro país</span></label>
+          <label class="form-opcion" onclick="selOpc(this,'pais')"><input type="radio" name="pais" value="USA"><div class="form-opcion-dot"></div><span class="form-opcion-txt">🇺🇸 Estados Unidos</span></label>
+          <label class="form-opcion" onclick="selOpc(this,'pais')"><input type="radio" name="pais" value="Otro"><div class="form-opcion-dot"></div><span class="form-opcion-txt">🌎 Otro país</span></label>
         </div>
       </div>
       <div class="form-grupo">
@@ -366,6 +391,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
     </div>
   </div>
 </div>
+
 <section class="s-alt">
   <div class="c rv">
     <div class="label">Quién está detrás</div>
@@ -385,11 +411,13 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
       <div class="bio-stats">
         <div><div class="bs-n"><span>6</span> años</div><div class="bs-l">Experiencia EE.UU.</div></div>
         <div><div class="bs-n"><span>7.4K</span></div><div class="bs-l">Vistas TikTok / semana · orgánico</div></div>
-        <div><div class="bs-n"><span>3</span> países</div><div class="bs-l">Colombia · México · España</div></div>
+        <div><div class="bs-n"><span>4</span> países</div><div class="bs-l">Colombia · México · España · EE.UU.</div></div>
       </div>
     </div>
+    <div style="margin-top:16px;font-size:13px;color:var(--gris2);font-style:italic;padding-left:4px;">Trabajo con las mismas herramientas que usan las mejores agencias del mundo — solo que sin los costos de intermediarios.</div>
   </div>
 </section>
+
 <section class="s">
   <div class="c rv">
     <div class="label">Resultados reales — no promesas</div>
@@ -414,6 +442,16 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
       </div>
       <div class="res-nota">160 me gusta · 49 compartidos · 10 comentarios · $0 en publicidad pagada. El contenido bien hecho trabaja solo.</div>
     </div>
+    <div class="resultado-bloque" style="margin-bottom:16px;">
+      <div class="res-empresa">Caso real · TikTok · Kéfir Glow</div>
+      <div class="res-titulo">Una sola publicación — cuenta nueva desde cero</div>
+      <div class="res-nums">
+        <div class="res-num-item"><div class="res-n">66K</div><div class="res-l">Vistas</div><div class="res-d">Un solo video · cuenta desde cero</div></div>
+        <div class="res-num-item"><div class="res-n">$0</div><div class="res-l">Inversión</div><div class="res-d">Cero pesos en publicidad pagada</div></div>
+        <div class="res-num-item"><div class="res-n">100%</div><div class="res-l">Orgánico</div><div class="res-d">Solo contenido bien hecho</div></div>
+      </div>
+      <div class="res-nota">Si logro eso con una cuenta nueva desde cero — imagina lo que puedo hacer con la tuya.</div>
+    </div>
     <div class="resultado-bloque">
       <div class="res-empresa">Videos de muestra · Portafolio con IA · Tres nichos</div>
       <div class="res-titulo">Así queda tu negocio — ejemplos generados con IA</div>
@@ -422,39 +460,26 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
           <video class="vid" controls playsinline>
             <source src="https://raw.githubusercontent.com/linahmgomez-lab/portafolio/main/Elegant_spa_treatment_room_sof_Kling_26_Pro_12204.mp4" type="video/mp4">
           </video>
-          <div style="padding:12px 16px;"><div style="font-size:13px;font-weight:600;color:var(--verde);margin-bottom:3px;">🌿 SPA & ESTÉTICA</div><div style="font-size:11px;color:var(--gris2);line-height:1.5;">Ambiente, tratamientos y lujo — generado con Kling AI · Video de muestra</div></div>
+          <div style="padding:12px 16px;"><div style="font-size:13px;font-weight:600;color:var(--verde);margin-bottom:3px;">🌿 SPA & ESTÉTICA</div><div style="font-size:11px;color:var(--gris2);line-height:1.5;">Ambiente, tratamientos y lujo — generado con IA · Video de muestra</div></div>
         </div>
         <div style="background:var(--negro4);border:1px solid var(--borde);border-radius:10px;overflow:hidden;">
           <video class="vid" controls playsinline>
             <source src="https://raw.githubusercontent.com/linahmgomez-lab/portafolio/main/Modern_dental_clinic_bright_cl_Kling_26_Pro_63279.mp4" type="video/mp4">
           </video>
-          <div style="padding:12px 16px;"><div style="font-size:13px;font-weight:600;color:var(--verde);margin-bottom:3px;">🦷 CLÍNICA & SALUD</div><div style="font-size:11px;color:var(--gris2);line-height:1.5;">Confianza, modernidad y profesionalismo — generado con Kling AI · Video de muestra</div></div>
+          <div style="padding:12px 16px;"><div style="font-size:13px;font-weight:600;color:var(--verde);margin-bottom:3px;">🦷 CLÍNICA & SALUD</div><div style="font-size:11px;color:var(--gris2);line-height:1.5;">Confianza, modernidad y profesionalismo — generado con IA · Video de muestra</div></div>
         </div>
         <div style="background:var(--negro4);border:1px solid var(--borde);border-radius:10px;overflow:hidden;">
           <video class="vid" controls playsinline>
             <source src="https://raw.githubusercontent.com/linahmgomez-lab/portafolio/main/Upscale_Colombian_restaurant_c_Kling_26_Pro_25173.mp4" type="video/mp4">
           </video>
-          <div style="padding:12px 16px;"><div style="font-size:13px;font-weight:600;color:var(--dorado);margin-bottom:3px;">🍽 RESTAURANTE & COMIDA</div><div style="font-size:11px;color:var(--gris2);line-height:1.5;">Gastronomía, ambiente y experiencia — generado con Kling AI · Video de muestra</div></div>
+          <div style="padding:12px 16px;"><div style="font-size:13px;font-weight:600;color:var(--dorado);margin-bottom:3px;">🍽 RESTAURANTE & COMIDA</div><div style="font-size:11px;color:var(--gris2);line-height:1.5;">Gastronomía, ambiente y experiencia — generado con IA · Video de muestra</div></div>
         </div>
       </div>
       <div class="res-nota">Estos son videos de muestra — no son clientes reales. Los creo para mostrarte cómo quedaría tu negocio. ¿Quieres ver cómo quedaría el tuyo?</div>
     </div>
   </div>
 </section>
-<section class="s-alt">
-  <div class="c rv">
-    <div class="label">Herramientas que uso</div>
-    <h2 class="h2">Tecnología real.<br><em>Resultados medibles.</em></h2>
-    <p class="h2-sub" style="margin-bottom:32px;">No trabajo con herramientas básicas. Uso lo mismo que usan las mejores agencias del mundo — y te cobro sin intermediarios.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;">
-      <div style="background:var(--negro2);border:1px solid var(--borde);border-radius:10px;padding:18px 16px;text-align:center;"><div style="font-size:24px;margin-bottom:8px;">🎬</div><div style="font-size:13px;font-weight:700;color:var(--blanco);margin-bottom:4px;">Kling AI</div><div style="font-size:11px;color:var(--gris2);">Generación de video con IA · calidad cinematográfica</div></div>
-      <div style="background:var(--negro2);border:1px solid var(--borde);border-radius:10px;padding:18px 16px;text-align:center;"><div style="font-size:24px;margin-bottom:8px;">✂️</div><div style="font-size:13px;font-weight:700;color:var(--blanco);margin-bottom:4px;">CapCut</div><div style="font-size:11px;color:var(--gris2);">Edición profesional · subtítulos · efectos</div></div>
-      <div style="background:var(--negro2);border:1px solid var(--borde);border-radius:10px;padding:18px 16px;text-align:center;"><div style="font-size:24px;margin-bottom:8px;">🎙</div><div style="font-size:13px;font-weight:700;color:var(--blanco);margin-bottom:4px;">ElevenLabs</div><div style="font-size:11px;color:var(--gris2);">Voz en off IA · español natural y realista</div></div>
-      <div style="background:var(--negro2);border:1px solid var(--borde);border-radius:10px;padding:18px 16px;text-align:center;"><div style="font-size:24px;margin-bottom:8px;">👤</div><div style="font-size:13px;font-weight:700;color:var(--blanco);margin-bottom:4px;">HeyGen</div><div style="font-size:11px;color:var(--gris2);">Avatar IA · videos corporativos con presentador</div></div>
-      <div style="background:var(--negro2);border:1px solid var(--borde);border-radius:10px;padding:18px 16px;text-align:center;"><div style="font-size:24px;margin-bottom:8px;">🤖</div><div style="font-size:13px;font-weight:700;color:var(--blanco);margin-bottom:4px;">Claude / ChatGPT</div><div style="font-size:11px;color:var(--gris2);">Guiones · copy · estrategia de contenido</div></div>
-    </div>
-  </div>
-</section>
+
 <section class="s-dark">
   <div class="c rv">
     <div class="label">Cómo trabajo</div>
@@ -467,19 +492,22 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
     </div>
   </div>
 </section>
+
 <section class="s">
   <div class="c-sm rv">
     <div class="label">Preguntas frecuentes</div>
     <h2 class="h2" style="margin-bottom:8px;">Lo que más<br><em>me preguntan.</em></h2>
     <div class="faq">
-      <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">¿Por qué los precios están en dólares si estás en Colombia? <span class="faq-icon">⌄</span></div><div class="faq-a">Trabajo con clientes en Colombia, México, España y cualquier país hispanohablante. Los precios en USD garantizan el mismo valor para todos. Para clientes colombianos siempre doy el equivalente en pesos al momento del pago.</div></div>
+      <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">¿Por qué los precios están en dólares si estás en Colombia? <span class="faq-icon">⌄</span></div><div class="faq-a">Trabajo con clientes en Colombia, México, España, EE.UU. y cualquier país hispanohablante. Los precios en USD garantizan el mismo valor para todos. Para clientes colombianos siempre doy el equivalente en pesos al momento del pago.</div></div>
       <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">¿Qué pasa si no veo resultados? <span class="faq-icon">⌄</span></div><div class="faq-a">En la auditoría garantizo encontrar mínimo 5 oportunidades de mejora concretas. Si no las encuentro, te devuelvo el dinero. Para los demás servicios, establecemos métricas claras antes de empezar.</div></div>
+      <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">¿Cómo son los pagos? <span class="faq-icon">⌄</span></div><div class="faq-a">Servicios hasta $200 USD: pago 100% antes de iniciar. Servicios desde $200 USD: 50% para iniciar y 50% contra entrega. El trabajo ya realizado no es reembolsable. Acepto Nequi, Bancolombia, PayPal y transferencia internacional.</div></div>
       <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">¿Puedo contratar varios servicios a la vez? <span class="faq-icon">⌄</span></div><div class="faq-a">Sí, y muchos clientes lo hacen. Cuando se contratan dos o más servicios juntos hay descuento. Cuéntame qué necesitas y armamos un paquete a tu medida.</div></div>
       <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">¿Lo de finanzas bíblicas es solo para cristianos? <span class="faq-icon">⌄</span></div><div class="faq-a">No excluyo a nadie — y tampoco le bajo el volumen a lo que creo. Este servicio nace de mi fe y de lo que viví: que cuando administras bien lo que tienes, algo más grande se mueve. Si llegas buscando orden en tus finanzas, bienvenido. Si en el camino encuentras algo más — mejor todavía.</div></div>
-      <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">¿Cuántos clientes atiendes al mes? <span class="faq-icon">⌄</span></div><div class="faq-a">Manejo cupos limitados por mes para garantizar atención personalizada. No soy una agencia masiva — soy una consultora que conoce tu negocio. Si hay disponibilidad cuando lees esto, es el momento de escribirme.</div></div>
+      <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">¿Cuántos clientes atiendes al mes? <span class="faq-icon">⌄</span></div><div class="faq-a">Manejo solo 5 cupos por mes para garantizar atención personalizada. No soy una agencia masiva — soy una consultora que conoce tu negocio. Si hay disponibilidad cuando lees esto, es el momento de escribirme.</div></div>
     </div>
   </div>
 </section>
+
 <section class="cta-final">
   <div class="cta-final-inner rv">
     <h2 class="display">¿Lista para que<br>tu negocio sea<br><em>encontrado?</em></h2>
@@ -488,11 +516,14 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
     <p class="cta-nota">Respondo en menos de 2 horas · Bogotá, Colombia · linahmgomez@gmail.com</p>
   </div>
 </section>
+
 <footer class="footer">
   © 2026 Lina Rachez · Consultora Digital con IA · Bogotá, Colombia<br>
-  <a href="mailto:linahmgomez@gmail.com">linahmgomez@gmail.com</a> · Colombia · México · España
+  <a href="mailto:linahmgomez@gmail.com">linahmgomez@gmail.com</a> · Colombia · México · España · EE.UU.
 </footer>
+
 <a href="https://wa.me/573114333030?text=Hola%20Lina%2C%20vi%20tu%20p%C3%A1gina" class="flotante" id="fl" target="_blank">WhatsApp →</a>
+
 <script>
 var modalServicio='',modalPrecio='',paisSel='',presupuestoSel='',bloquear=false;
 function abrirModal(s,p,e){if(e)e.stopPropagation();modalServicio=s;modalPrecio=p;document.getElementById('modalServNombre').textContent=s+' — '+p;document.getElementById('paso1').style.display='block';document.getElementById('paso2bloqueado').style.display='none';document.getElementById('paso2aprobado').style.display='none';document.getElementById('inputNombre').value='';document.getElementById('inputUrgente').value='';paisSel='';presupuestoSel='';bloquear=false;document.querySelectorAll('.form-opcion').forEach(o=>o.classList.remove('selected'));document.getElementById('btnContinuar').disabled=true;document.getElementById('modalOverlay').classList.add('show');document.body.style.overflow='hidden';}
