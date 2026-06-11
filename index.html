@@ -10,6 +10,12 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:var(--gris1);font-size:16px;line-height:1.7;overflow-x:hidden}
+.ticker-wrap{background:var(--verde);overflow:hidden;padding:8px 0;position:relative;z-index:60}
+.ticker{display:flex;width:max-content;animation:ticker 25s linear infinite}
+.ticker:hover{animation-play-state:paused}
+.ticker-item{display:flex;align-items:center;gap:8px;padding:0 40px;font-size:12px;font-weight:700;color:var(--negro);white-space:nowrap;text-transform:uppercase;letter-spacing:0.06em}
+.ticker-sep{color:var(--negro);opacity:0.4;font-size:16px}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .c{max-width:780px;margin:0 auto;padding:0 28px}
 .c-sm{max-width:620px;margin:0 auto;padding:0 28px}
 .display{font-family:'Syne',sans-serif;font-weight:800;line-height:1.05;letter-spacing:-0.03em}
@@ -178,6 +184,24 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
 </head>
 <body>
 
+<!-- TICKER ANIMADO -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <div class="ticker-item">⚡ Solo 5 cupos disponibles este mes <span class="ticker-sep">·</span></div>
+    <div class="ticker-item">🚀 Digitaliza tu negocio con IA — sin pagar una agencia <span class="ticker-sep">·</span></div>
+    <div class="ticker-item">⏰ No esperes a que tu local vacío te lo recuerde <span class="ticker-sep">·</span></div>
+    <div class="ticker-item">📍 568 vistas Google Maps — cliente real — sin publicidad <span class="ticker-sep">·</span></div>
+    <div class="ticker-item">🎬 Videos profesionales con IA en 48 horas <span class="ticker-sep">·</span></div>
+    <div class="ticker-item">💚 Trabajo con las mejores herramientas del mundo — sin intermediarios <span class="ticker-sep">·</span></div>
+    <div class="ticker-item">⚡ Solo 5 cupos disponibles este mes <span class="ticker-sep">·</span></div>
+    <div class="ticker-item">🚀 Digitaliza tu negocio con IA — sin pagar una agencia <span class="ticker-sep">·</span></div>
+    <div class="ticker-item">⏰ No esperes a que tu local vacío te lo recuerde <span class="ticker-sep">·</span></div>
+    <div class="ticker-item">📍 568 vistas Google Maps — cliente real — sin publicidad <span class="ticker-sep">·</span></div>
+    <div class="ticker-item">🎬 Videos profesionales con IA en 48 horas <span class="ticker-sep">·</span></div>
+    <div class="ticker-item">💚 Trabajo con las mejores herramientas del mundo — sin intermediarios <span class="ticker-sep">·</span></div>
+  </div>
+</div>
+
 <nav class="topbar">
   <a href="#" class="topbar-logo">Lina<span>.</span>Rachez</a>
   <a href="https://wa.me/573114333030?text=Hola%20Lina%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20saber%20m%C3%A1s" class="topbar-cta" target="_blank">Hablemos →</a>
@@ -313,7 +337,6 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
         </div>
       </div>
     </div>
-
     <div class="terminos">
       <strong>Términos y condiciones de trabajo</strong>
       · Al confirmar el servicio por WhatsApp aceptas estos términos.<br>
@@ -413,8 +436,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:va
         <div><div class="bs-n"><span>7.4K</span></div><div class="bs-l">Vistas TikTok / semana · orgánico</div></div>
         <div><div class="bs-n"><span>4</span> países</div><div class="bs-l">Colombia · México · España · EE.UU.</div></div>
       </div>
+      <div style="margin-top:16px;font-size:13px;color:var(--gris2);font-style:italic;padding-left:4px;">Trabajo con las mismas herramientas que usan las mejores agencias del mundo — solo que sin los costos de intermediarios.</div>
     </div>
-    <div style="margin-top:16px;font-size:13px;color:var(--gris2);font-style:italic;padding-left:4px;">Trabajo con las mismas herramientas que usan las mejores agencias del mundo — solo que sin los costos de intermediarios.</div>
   </div>
 </section>
 
