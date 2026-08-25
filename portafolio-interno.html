@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lina Rachez — Portafolio de Servicios (uso interno)</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--negro:#0A0A0F;--negro2:#111118;--negro3:#18181F;--negro4:#222230;--verde:#00E5A0;--verde-dim:rgba(0,229,160,0.12);--verde-glow:rgba(0,229,160,0.25);--dorado:#F0B429;--dorado-dim:rgba(240,180,41,0.12);--rojo:#E63946;--blanco:#FFFFFF;--gris1:#F0EEE8;--gris2:#A8A89C;--gris3:#52524A;--borde:rgba(255,255,255,0.08);--borde-verde:rgba(0,229,160,0.2)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:var(--gris1);font-size:16px;line-height:1.7}
+.c{max-width:820px;margin:0 auto;padding:0 24px}
+.display{font-family:'Syne',sans-serif;font-weight:800;line-height:1.05;letter-spacing:-0.03em}
+.topbar{background:var(--negro2);border-bottom:1px solid var(--borde);padding:18px 24px;position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between}
+.topbar-logo{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;color:var(--blanco)}
+.topbar-logo span{color:var(--verde)}
+.topbar-badge{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--gris3);background:rgba(255,255,255,0.05);border:1px solid var(--borde);padding:6px 12px;border-radius:100px}
+.hero{padding:64px 24px 40px}
+.hero .label{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--verde);margin-bottom:14px}
+.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,5vw,46px);color:var(--blanco);line-height:1.1;letter-spacing:-0.02em;margin-bottom:16px}
+.hero h1 em{font-style:italic;color:var(--verde)}
+.hero p{font-size:16px;color:var(--gris2);max-width:560px;line-height:1.7}
+.nav-servicios{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 0}
+.nav-chip{background:var(--negro3);border:1px solid var(--borde);border-radius:100px;padding:9px 18px;font-size:13px;font-weight:600;color:var(--gris1);text-decoration:none;transition:all 0.15s}
+.nav-chip:hover{border-color:var(--borde-verde);color:var(--verde)}
+.pais-selector{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:28px 0 0;padding:16px;background:var(--negro3);border:1px solid var(--borde);border-radius:12px}
+.pais-selector-label{font-size:11px;color:var(--gris3);font-weight:600;text-transform:uppercase;letter-spacing:0.08em}
+.pais-flag{display:flex;align-items:center;gap:6px;background:var(--negro4);border:1px solid var(--borde);border-radius:100px;padding:7px 14px;font-size:13px;font-weight:600;color:var(--gris2);cursor:pointer;transition:all 0.15s}
+.pais-flag:hover{border-color:rgba(255,255,255,0.2)}
+.pais-flag.activo{border-color:var(--borde-verde);background:var(--verde-dim);color:var(--verde)}
+.servicio-section{padding:56px 24px;border-top:1px solid var(--borde)}
+.servicio-header{margin-bottom:32px}
+.servicio-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--dorado);margin-bottom:10px}
+.servicio-titulo{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(24px,3.5vw,34px);color:var(--blanco);margin-bottom:10px;letter-spacing:-0.01em}
+.servicio-para{font-size:15px;color:var(--gris2);max-width:600px}
+.bloque{background:var(--negro2);border:1px solid var(--borde);border-radius:14px;padding:26px 28px;margin-bottom:16px}
+.bloque-titulo{font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--verde);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.bloque-titulo.no-incluye{color:var(--rojo)}
+.lista{list-style:none;display:grid;gap:10px}
+.lista li{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--gris1);line-height:1.5}
+.lista.incluye li::before{content:'✓';color:var(--verde);font-weight:700;flex-shrink:0}
+.lista.no-incluye li::before{content:'✕';color:var(--rojo);font-weight:700;flex-shrink:0}
+.lista.neutra li::before{content:'→';color:var(--dorado);font-weight:700;flex-shrink:0}
+.dos-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fases{display:flex;flex-direction:column;gap:0}
+.fase{display:flex;gap:16px}
+.fase-num{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;color:var(--verde);min-width:60px;padding-top:2px}
+.fase-linea{width:1px;background:var(--borde);margin:0 18px 0 0}
+.fase-body{flex:1;padding-bottom:20px}
+.fase-body:last-child{padding-bottom:0}
+.fase-titulo{font-size:14px;font-weight:600;color:var(--blanco);margin-bottom:3px}
+.fase-desc{font-size:13px;color:var(--gris2)}
+.precio-card{background:var(--negro3);border:1px solid var(--borde-verde);border-radius:14px;padding:24px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.precio-info .precio-label{font-size:11px;color:var(--gris3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
+.precio-valor{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;color:var(--blanco)}
+.precio-sub{font-size:12px;color:var(--gris2);margin-top:4px}
+.pago-nota{font-size:12px;color:var(--dorado);background:var(--dorado-dim);border:1px solid rgba(240,180,41,0.25);border-radius:8px;padding:10px 14px;margin-top:14px}
+.niveles-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:8px}
+.nivel-card{background:var(--negro3);border:1px solid var(--borde);border-radius:14px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.nivel-card.destacado{border-color:var(--borde-verde);background:var(--verde-dim)}
+.nivel-nombre{font-size:15px;font-weight:700;color:var(--blanco);margin-bottom:4px}
+.nivel-desc{font-size:12.5px;color:var(--gris2);max-width:380px}
+.nivel-precio{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--verde);white-space:nowrap}
+.footer-nota{padding:40px 24px 60px;text-align:center;font-size:12px;color:var(--gris3);border-top:1px solid var(--borde)}
+.tabla-wrap{overflow-x:auto;margin-top:8px;border-radius:14px;border:1px solid var(--borde)}
+.tabla-comp{width:100%;border-collapse:collapse;min-width:640px;background:var(--negro2)}
+.tabla-comp th,.tabla-comp td{padding:14px 16px;text-align:center;font-size:13px;border-bottom:1px solid var(--borde);border-right:1px solid var(--borde)}
+.tabla-comp th:first-child,.tabla-comp td:first-child{text-align:left;color:var(--gris2);font-weight:500;min-width:180px}
+.tabla-comp td:last-child,.tabla-comp th:last-child{border-right:none}
+.tabla-comp thead th{background:var(--negro3);color:var(--blanco);font-family:'Syne',sans-serif;font-weight:700;font-size:13px}
+.tabla-comp thead th.destacada{background:var(--verde-dim);color:var(--verde)}
+.tabla-comp tbody td.destacada{background:rgba(0,229,160,0.05)}
+.tabla-comp .si{color:var(--verde);font-weight:700}
+.tabla-comp .no{color:var(--gris3)}
+.tabla-comp .precio-fila{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:var(--blanco)}
+.extras-lista{list-style:none;display:grid;gap:10px;margin-top:8px}
+.extras-lista li{display:flex;justify-content:space-between;gap:16px;font-size:14px;color:var(--gris1);padding:10px 0;border-bottom:1px dashed var(--borde)}
+.extras-lista li:last-child{border-bottom:none}
+.extras-lista .extra-precio{color:var(--dorado);font-weight:700;white-space:nowrap}
+@media(max-width:640px){.dos-col{grid-template-columns:1fr}.precio-card{flex-direction:column;align-items:flex-start}.nivel-card{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-logo">Lina<span>.</span>Rachez</div>
+  <div class="topbar-badge">Portafolio interno · No público</div>
+</nav>
+
+<section class="hero">
+  <div class="c">
+    <div class="label">Catálogo de servicios · Detalle completo</div>
+    <h1 class="display">Todo lo que necesitas <em>saber antes de decir sí.</em></h1>
+    <p>Este documento lo uso para mostrarte, servicio por servicio, qué incluye, qué no incluye, qué necesito de ti y qué recibes al final — sin sorpresas de por medio.</p>
+    <div class="nav-servicios">
+      <a href="#landing" class="nav-chip">🖥️ Landing Pages</a>
+      <a href="#maps" class="nav-chip">📍 Google Maps</a>
+      <a href="#contenido" class="nav-chip">🗓️ Plan de Contenido</a>
+    </div>
+    <div class="pais-selector">
+      <span class="pais-selector-label">Ver precios en:</span>
+      <div class="pais-flag activo" data-pais="USA" onclick="cambiarPais('USA',this)">🇺🇸 USD</div>
+      <div class="pais-flag" data-pais="COL" onclick="cambiarPais('COL',this)">🇨🇴 COP</div>
+      <div class="pais-flag" data-pais="MEX" onclick="cambiarPais('MEX',this)">🇲🇽 MXN</div>
+      <div class="pais-flag" data-pais="ESP" onclick="cambiarPais('ESP',this)">🇪🇸 EUR</div>
+    </div>
+  </div>
+</section>
+
+<section class="servicio-section" id="landing">
+  <div class="c">
+    <div class="servicio-header">
+      <div class="servicio-eyebrow">Servicio 01 · El más pedido</div>
+      <div class="servicio-titulo">Landing Pages</div>
+      <p class="servicio-para">Para negocios y emprendedores que necesitan una página enfocada en <strong style="color:var(--blanco);">convertir</strong>: que les escriban por WhatsApp, que reserven, que compren, que agenden. Cuatro niveles según lo que necesites.</p>
+    </div>
+
+    <div class="tabla-wrap">
+      <table class="tabla-comp">
+        <thead>
+          <tr>
+            <th>Nivel</th>
+            <th>Sencilla</th>
+            <th class="destacada">Básica</th>
+            <th>Avanzada</th>
+            <th>Integral</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Precio</td>
+            <td class="precio-fila"><span data-precios='{"COL":"$190.000 COP","MEX":"$1,400 MXN","ESP":"€70","USA":"$80 USD"}'>$80 USD</span></td>
+            <td class="precio-fila destacada"><span data-precios='{"COL":"$350.000 COP","MEX":"$2,500 MXN","ESP":"€130","USA":"$150 USD"}'>$150 USD</span></td>
+            <td class="precio-fila"><span data-precios='{"COL":"$580.000 COP","MEX":"$4,200 MXN","ESP":"€220","USA":"$250 USD"}'>$250 USD</span></td>
+            <td class="precio-fila"><span data-precios='{"COL":"$1.200.000 COP","MEX":"$8,000 MXN","ESP":"€450","USA":"$500 USD"}'>$500 USD</span></td>
+          </tr>
+          <tr>
+            <td>Secciones</td>
+            <td>1</td>
+            <td class="destacada">4-6</td>
+            <td>6-8</td>
+            <td>Múltiples páginas o tienda</td>
+          </tr>
+          <tr>
+            <td>Botón de WhatsApp</td>
+            <td class="si">✓</td>
+            <td class="destacada si">✓</td>
+            <td class="si">✓</td>
+            <td class="si">✓</td>
+          </tr>
+          <tr>
+            <td>Formulario que filtra clientes</td>
+            <td class="no">✕</td>
+            <td class="destacada si">✓</td>
+            <td class="si">✓</td>
+            <td class="si">✓</td>
+          </tr>
+          <tr>
+            <td>Animaciones y efectos visuales</td>
+            <td class="no">✕</td>
+            <td class="destacada no">✕</td>
+            <td class="si">✓</td>
+            <td class="si">✓</td>
+          </tr>
+          <tr>
+            <td>Selector de precios por país</td>
+            <td class="no">✕</td>
+            <td class="destacada no">✕</td>
+            <td class="si">✓</td>
+            <td class="si">✓</td>
+          </tr>
+          <tr>
+            <td>Sección de portafolio/casos</td>
+            <td class="no">✕</td>
+            <td class="destacada no">✕</td>
+            <td class="si">✓</td>
+            <td class="si">✓</td>
+          </tr>
+          <tr>
+            <td>Catálogo + carrito de compras</td>
+            <td class="no">✕</td>
+            <td class="destacada no">✕</td>
+            <td class="no">✕</td>
+            <td class="si">✓</td>
+          </tr>
+          <tr>
+            <td>Rondas de ajustes incluidas</td>
+            <td>1</td>
+            <td class="destacada">1</td>
+            <td>2</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Tiempo de entrega</td>
+            <td>2 días</td>
+            <td class="destacada">4 días</td>
+            <td>6 días</td>
+            <td>10-15 días</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="dos-col" style="margin-top:24px;">
+      <div class="bloque">
+        <div class="bloque-titulo">✓ Qué incluye (todos los niveles)</div>
+
+        <ul class="lista incluye">
+          <li>Diseño responsive (se ve bien en celular y computador)</li>
+          <li>Textos redactados a partir de lo que me cuentes de tu negocio</li>
+          <li>Botón de WhatsApp con mensaje pre-armado</li>
+          <li>1 ronda de ajustes después de la primera entrega</li>
+        </ul>
+      </div>
+      <div class="bloque">
+        <div class="bloque-titulo no-incluye">✕ Qué NO incluye</div>
+        <ul class="lista no-incluye">
+          <li>Dominio propio (ej: tunombre.com) — se cotiza aparte, o se publica en subdominio gratuito</li>
+          <li>Fotos reales del negocio — si no las tienes, ver opciones abajo en "Valores adicionales"</li>
+          <li>Más de 1 ronda de ajustes — cada ronda extra tiene costo adicional</li>
+          <li>Mantenimiento mensual — se ofrece aparte si lo necesitas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dos-col">
+      <div class="bloque">
+        <div class="bloque-titulo">→ Qué necesito de ti</div>
+        <ul class="lista neutra">
+          <li>Nombre del negocio, qué ofreces y a quién</li>
+          <li>Fotos o logo si ya los tienes (si no, los conseguimos juntas)</li>
+          <li>Tu número de WhatsApp de negocio</li>
+          <li>Ejemplos de páginas que te gusten (opcional, ayuda mucho)</li>
+        </ul>
+      </div>
+      <div class="bloque">
+        <div class="bloque-titulo">→ Qué te entrego</div>
+        <ul class="lista neutra">
+          <li>Link de tu página, lista para compartir</li>
+          <li>El código fuente, por si quieres moverla a otro lugar después</li>
+          <li>Breve explicación de cómo actualizar textos simples tú misma</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <div class="bloque-titulo">Fases y tiempos (Landing Básica, como referencia)</div>
+      <div class="fases">
+        <div class="fase"><div class="fase-num">Día 1</div><div class="fase-linea"></div><div class="fase-body"><div class="fase-titulo">Brief y diagnóstico</div><div class="fase-desc">Me cuentas de tu negocio, defino estructura y mensaje principal.</div></div></div>
+        <div class="fase"><div class="fase-num">Día 2-3</div><div class="fase-linea"></div><div class="fase-body"><div class="fase-titulo">Diseño y redacción</div><div class="fase-desc">Armo la página completa con tus textos e imágenes.</div></div></div>
+        <div class="fase"><div class="fase-num">Día 4</div><div class="fase-linea"></div><div class="fase-body"><div class="fase-titulo">Entrega y ajustes</div><div class="fase-desc">Te muestro el resultado, aplico la ronda de ajustes incluida.</div></div></div>
+      </div>
+    </div>
+
+    <div class="pago-nota">💳 Forma de pago: hasta $200 USD, 100% antes de iniciar. Desde $200 USD (Landing Avanzada y Paquete Integral), 50% para iniciar y 50% contra entrega.</div>
+
+    <div class="bloque">
+      <div class="bloque-titulo" style="color:var(--dorado);">＋ Valores adicionales (no incluidos en ningún nivel)</div>
+      <ul class="extras-lista">
+        <li><span>Dominio .com — 1er año (costo real, se transfiere sin margen)</span><span class="extra-precio" data-precios='{"COL":"$36.000 COP","MEX":"$260 MXN","ESP":"€13","USA":"$15 USD"}'>$15 USD</span></li>
+        <li><span>Compra, conexión y configuración del dominio (tu servicio)</span><span class="extra-precio" data-precios='{"COL":"$48.000 COP","MEX":"$340 MXN","ESP":"€18","USA":"$20 USD"}'>$20 USD</span></li>
+        <li><span>Ronda de ajustes adicional (más allá de las incluidas)</span><span class="extra-precio" data-precios='{"COL":"$48.000 COP","MEX":"$340 MXN","ESP":"€18","USA":"$20 USD"}'>$20 USD</span></li>
+        <li><span>Mantenimiento mensual (actualizar textos, precios, fotos)</span><span class="extra-precio" data-precios='{"COL":"$72.000 COP","MEX":"$510 MXN","ESP":"€26","USA":"$30 USD"}'>$30 USD / mes</span></li>
+        <li><span>Sesión de fotos reales del negocio (yo las tomo con celular, edición básica incluida)</span><span class="extra-precio" data-precios='{"COL":"$70.000 COP","MEX":"$510 MXN","ESP":"€26","USA":"$30 USD"}'>$30 USD</span></li>
+        <li><span>Guía rápida para que el cliente tome sus propias fotos con el celular</span><span class="extra-precio">Gratis — incluida si la pide</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="servicio-section" id="maps">
+  <div class="c">
+    <div class="servicio-header">
+      <div class="servicio-eyebrow">Servicio 02 · Resultado rápido</div>
+      <div class="servicio-titulo">Google Maps + Presencia Digital</div>
+      <p class="servicio-para">Para negocios físicos (restaurantes, spas, tiendas, clínicas) que quieren que los encuentren antes que a la competencia cuando alguien busca cerca.</p>
+    </div>
+
+    <div class="precio-card">
+      <div class="precio-info">
+        <div class="precio-label">Precio · pago único</div>
+        <div class="precio-valor" data-precios='{"COL":"Desde $250.000 COP","MEX":"Desde $2,000 MXN","ESP":"Desde €100","USA":"Desde $120 USD"}'>Desde $120 USD</div>
+        <div class="precio-sub">El precio final depende de qué tan desordenado esté el perfil actual</div>
+      </div>
+    </div>
+
+    <div class="dos-col" style="margin-top:24px;">
+      <div class="bloque">
+        <div class="bloque-titulo">✓ Qué incluye</div>
+        <ul class="lista incluye">
+          <li>Perfil de Google Maps optimizado al 100% (categorías, horarios, descripción, palabras clave)</li>
+          <li>Carga de fotos y organización del catálogo de productos/servicios</li>
+          <li>Estrategia simple para conseguir reseñas de clientes reales</li>
+          <li>Guía corta de cómo mantenerlo tú misma después</li>
+          <li>Seguimiento a los 30 días para revisar cómo va</li>
+        </ul>
+      </div>
+      <div class="bloque">
+        <div class="bloque-titulo no-incluye">✕ Qué NO incluye</div>
+        <ul class="lista no-incluye">
+          <li>Pauta paga en Google (Google Ads) — es otro servicio, se cotiza aparte</li>
+          <li>Fotos del negocio — con celular está perfecto (como Confort Jireh); si no tiene ninguna, ver "Sesión de fotos" en valores adicionales</li>
+          <li>Responder reseñas de forma continua — solo dejo la estrategia armada</li>
+          <li>Garantía de posición #1 — nadie puede garantizar eso, ni Google lo permite prometer</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dos-col">
+      <div class="bloque">
+        <div class="bloque-titulo">→ Qué necesito de ti</div>
+        <ul class="lista neutra">
+          <li>Acceso al perfil de Google Maps del negocio (o lo creamos si no existe)</li>
+          <li>Fotos actuales del local, productos o servicios</li>
+          <li>Horarios reales de atención</li>
+        </ul>
+      </div>
+      <div class="bloque">
+        <div class="bloque-titulo">→ Qué te entrego</div>
+        <ul class="lista neutra">
+          <li>Perfil de Google Maps completamente optimizado</li>
+          <li>Reporte PDF de qué se cambió y por qué</li>
+          <li>Guía de 1 página: cómo responder reseñas, subir fotos nuevas y actualizar horarios tú misma, sin depender de mí</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <div class="bloque-titulo">Fases y tiempos</div>
+      <div class="fases">
+        <div class="fase"><div class="fase-num">Día 1</div><div class="fase-linea"></div><div class="fase-body"><div class="fase-titulo">Auditoría del perfil actual</div><div class="fase-desc">Reviso qué está mal o incompleto.</div></div></div>
+        <div class="fase"><div class="fase-num">Día 2</div><div class="fase-linea"></div><div class="fase-body"><div class="fase-titulo">Optimización completa</div><div class="fase-desc">Aplico todos los cambios: fotos, categorías, descripción, palabras clave.</div></div></div>
+        <div class="fase"><div class="fase-num">Día 30</div><div class="fase-linea"></div><div class="fase-body"><div class="fase-titulo">Seguimiento</div><div class="fase-desc">Reviso vistas e interacciones, te cuento qué está funcionando.</div></div></div>
+      </div>
+    </div>
+
+    <div class="pago-nota">💳 Forma de pago: 100% antes de iniciar (está bajo $200 USD).</div>
+
+    <div class="bloque">
+      <div class="bloque-titulo" style="color:var(--dorado);">＋ Valores adicionales (no incluidos)</div>
+      <ul class="extras-lista">
+        <li><span>Gestión continua de reseñas y respuestas (mensual)</span><span class="extra-precio" data-precios='{"COL":"$72.000 COP","MEX":"$500 MXN","ESP":"€27","USA":"$30 USD"}'>$30 USD / mes</span></li>
+        <li><span>Pauta en Google Ads (configuración inicial)</span><span class="extra-precio">Cotización según presupuesto</span></li>
+        <li><span>Sesión de fotos reales del negocio con celular (si no tiene ninguna)</span><span class="extra-precio" data-precios='{"COL":"$70.000 COP","MEX":"$510 MXN","ESP":"€26","USA":"$30 USD"}'>$30 USD</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="servicio-section" id="contenido">
+  <div class="c">
+    <div class="servicio-header">
+      <div class="servicio-eyebrow">Servicio 03 · Nuevo</div>
+      <div class="servicio-titulo">Plan de Contenido Mensual</div>
+      <p class="servicio-para">Para quien ya sabe grabar o tiene quién lo haga, pero no sabe qué publicar ni cuándo. Yo pienso la estrategia — tú (o tu equipo) ejecutan.</p>
+    </div>
+
+    <div class="precio-card">
+      <div class="precio-info">
+        <div class="precio-label">Precio · mensual</div>
+        <div class="precio-valor" data-precios='{"COL":"$120.000 COP","MEX":"$850 MXN","ESP":"€45","USA":"$50 USD"}'>$50 USD</div>
+        <div class="precio-sub">Servicio de estrategia — no incluye grabación, edición ni publicación</div>
+      </div>
+    </div>
+
+    <div class="dos-col" style="margin-top:24px;">
+      <div class="bloque">
+        <div class="bloque-titulo">✓ Qué incluye</div>
+        <ul class="lista incluye">
+          <li>Diagnóstico corto: qué está fallando en tu presencia actual</li>
+          <li>Calendario de 30 días: tema, formato y día de publicación por cada contenido</li>
+          <li>Guion o texto listo para grabar de cada pieza (no solo el tema — qué decir)</li>
+          <li>Sugerencia de hashtags y horarios de publicación</li>
+        </ul>
+      </div>
+      <div class="bloque">
+        <div class="bloque-titulo no-incluye">✕ Qué NO incluye</div>
+        <ul class="lista no-incluye">
+          <li>Grabación de los videos o fotos — eso lo haces tú o tu equipo</li>
+          <li>Edición de ningún contenido</li>
+          <li>Publicación en las redes — tú programas y publicas</li>
+          <li>Diseño gráfico de piezas — solo texto y estructura</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dos-col">
+      <div class="bloque">
+        <div class="bloque-titulo">→ Qué necesito de ti</div>
+        <ul class="lista neutra">
+          <li>Contarme qué vendes, a quién, y qué has publicado hasta ahora</li>
+          <li>Decirme qué formato puedes grabar (reels, fotos, ambos)</li>
+          <li>Acceso de solo lectura a tus redes actuales (opcional, ayuda al diagnóstico)</li>
+        </ul>
+      </div>
+      <div class="bloque">
+        <div class="bloque-titulo">→ Qué te entrego</div>
+        <ul class="lista neutra">
+          <li>Documento (Notion, Excel o PDF — tú eliges) con el calendario completo del mes</li>
+          <li>Guiones/textos de cada publicación, listos para grabar</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <div class="bloque-titulo">Fases y tiempos</div>
+      <div class="fases">
+        <div class="fase"><div class="fase-num">Día 1</div><div class="fase-linea"></div><div class="fase-body"><div class="fase-titulo">Diagnóstico</div><div class="fase-desc">Entiendo tu negocio y qué no está funcionando en tu contenido actual.</div></div></div>
+        <div class="fase"><div class="fase-num">Día 2-3</div><div class="fase-linea"></div><div class="fase-body"><div class="fase-titulo">Construcción del calendario</div><div class="fase-desc">Defino temas, formatos y escribo los guiones de cada pieza.</div></div></div>
+        <div class="fase"><div class="fase-num">Día 4</div><div class="fase-linea"></div><div class="fase-body"><div class="fase-titulo">Entrega</div><div class="fase-desc">Te paso el documento completo, listo para que empieces a grabar.</div></div></div>
+      </div>
+    </div>
+
+    <div class="pago-nota">💳 Forma de pago: 100% antes de iniciar (está bajo $200 USD).</div>
+
+    <div class="bloque">
+      <div class="bloque-titulo" style="color:var(--dorado);">＋ Valores adicionales (no incluidos)</div>
+      <ul class="extras-lista">
+        <li><span>Ronda de ajuste a los guiones ya entregados</span><span class="extra-precio" data-precios='{"COL":"$36.000 COP","MEX":"$260 MXN","ESP":"€14","USA":"$15 USD"}'>$15 USD</span></li>
+        <li><span>Diseño de piezas gráficas de apoyo (no solo texto)</span><span class="extra-precio" data-precios='{"COL":"$72.000 COP","MEX":"$500 MXN","ESP":"€27","USA":"$30 USD"}'>$30 USD</span></li>
+        <li><span>Excepción: que yo publique el contenido en tus redes (mensual, recurrente)</span><span class="extra-precio" data-precios='{"COL":"$110.000 COP","MEX":"$780 MXN","ESP":"€40","USA":"$45 USD"}'>$45 USD / mes</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+  Documento de uso interno · Lina Rachez · Consultora Digital con IA<br>
+  Los precios y condiciones pueden actualizarse — este documento no reemplaza el acuerdo final por WhatsApp.
+</div>
+
+<script>
+function cambiarPais(pais,el){
+  document.querySelectorAll('.pais-flag').forEach(f=>f.classList.remove('activo'));
+  el.classList.add('activo');
+  document.querySelectorAll('[data-precios]').forEach(function(elemento){
+    var precios=JSON.parse(elemento.getAttribute('data-precios'));
+    if(precios&&precios[pais]){elemento.textContent=precios[pais];}
+  });
+}
+</script>
+</body>
+</html>
